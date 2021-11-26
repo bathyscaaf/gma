@@ -1,0 +1,15 @@
+.input {
+    @apply shadow rounded p-4 h-16 text-base text-graphite
+}
+.textarea {
+    @apply p-4 shadow rounded text-graphite
+}
+.label {
+    @apply mb-2 uppercase font-semi-bold text-base text-white
+}
+
+.input:focus,
+.textarea:focus {
+    box-shadow: inset 0 0 6px rgba(0,0,0,.4);
+    outline: none;
+}

@@ -1,12 +1,29 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import './assets/styles/index.css'
+import VueMq from 'vue-mq'
+import Lottie from 'lottie-web'
+import { ObserveVisibility } from 'vue-observe-visibility'
+// import router from './router'
+// import store from './store'
+
+Vue.directive('observe-visibility', ObserveVisibility)
+Vue.use(VueMq, {
+  breakpoints: { // matches default tailwind breakpoints
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280
+  },
+  defaultBreakpoint: 'sm' // customize this for SSR
+})
+
+Object.defineProperty(Vue.prototype, '$lottie', { value: Lottie })
 
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
+  // router,
+  // store,
   render: h => h(App)
 }).$mount('#app')

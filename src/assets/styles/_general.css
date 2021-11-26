@@ -1,0 +1,56 @@
+/* ------------ image media query for screen resolution ----------- */
+.retina-img {
+    display:none;
+}
+.non-retina-img {
+    display: block;
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+    .retina-img {
+        display: block;
+    }
+    .non-retina-img {
+        display: none;
+    }
+
+}
+
+/* -------------  elements -------------------- */
+.button {
+    min-width: 10rem;
+    @apply pl-4 pr-4 pt-2 pb-2 font-semi-bold rounded shadow flex justify-center items-center
+}
+
+.button-image {
+    outline: none;
+    @apply m-0 p-0 block cursor-pointer
+}
+a.button-video .play-button {
+    outline: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    /*opacity: .7;*/
+    background: url(/img/playIcon.svg) no-repeat center center/30%;
+}
+.button-image:active {
+    outline: none;
+}
+.button-image:focus {
+    outline: none;
+}
+
+figcaption {
+    @apply text-sm;
+}

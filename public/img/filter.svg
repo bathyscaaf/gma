@@ -1,0 +1,27 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51px"
+     height="51px" viewBox="0 0 51 51" style="enable-background:new 0 0 51 51;" xml:space="preserve">
+    <filter id="globalNoise">
+        <feTurbulence
+                type="fractalNoise"
+                baseFrequency=".6"
+                stitchTiles="stitch"
+                result="noiseOut" />
+        <feColorMatrix in="noiseOut"
+                       type="matrix"
+                       result="grayscaleSmall"
+                       values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0" />
+        <feBlend mode="screen" in2="grayscaleBig" in="grayscaleSmall" result="blended" />
+        <feColorMatrix
+                in="blended"
+                result="colored"
+                type="matrix"
+                values="0.42     0     0     0     0
+              0     0.58     0     0     0
+              0     0     0.64     0     0
+              0     0     0     1     0 "/>
+        <feComposite operator="atop" in="colored" in2="SourceGraphic"/>
+      </filter>
+    <g>
+	<circle class="st0" cx="25.5" cy="25.5" r="25.5"/>
+</g>
+</svg>

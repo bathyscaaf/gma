@@ -1,0 +1,13 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#modal-body {
+  max-width: 90vw;
+  max-height: 90vh;
+}
