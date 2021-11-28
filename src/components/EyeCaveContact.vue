@@ -105,7 +105,7 @@
 
 <style>
   #stalactites {
-    /*top: -1px;*/
+    top: -1px;
   }
   #stalagmites {
     /*bottom: -1px;*/
