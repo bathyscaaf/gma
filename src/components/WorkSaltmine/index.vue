@@ -6,7 +6,7 @@
 <template>
   <article class="container mx-auto text-white px-8">
     <header class="mb-4 leading-tight">
-      <span class="text-xl md:text-3xl font-heading">SALTMINE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-work-light">2004 - 2008</span>
+      <span class="text-xl md:text-3xl font-heading">SALTMINE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-peach">2004 - 2008</span>
       <br>
       <span class="font-extraLight">
         Front-end developer/Flash Developer

@@ -19,15 +19,6 @@
       <button @click="onNavClick('#about-section')" class="nav-button bg-about w-1/4 md:w-auto">About</button>
       <button @click="onNavClick('#work-section')" class="nav-button bg-work w-1/4 md:w-auto">Work</button>
       <button @click="onNavClick('#contact-section')" class="nav-button bg-contact w-1/4 md:w-auto">Contact</button>
-<!--      <button class="nav-button w-1/5">-->
-<!--        <span class="portrait md:hidden landscape-sm:hidden">portrait sm</span>-->
-<!--        <span class="portrait-sm:hidden md:hidden landscape">landscape sm</span>-->
-<!--        <span class="inline portrait-sm:hidden landscape-sm:hidden md:hidden site-subtitle">Small</span>-->
-<!--        <span class="inline hidden lg:hidden md:inline site-subtitle">Medium</span>-->
-<!--        <span class="inline hidden md:hidden lg:inline xl:hidden site-subtitle">Large</span>-->
-<!--        <span class="inline hidden md:hidden lg:hidden xl:inline site-subtitle">XL</span>-->
-<!--      </button>-->
-
     </nav>
     <div class="pd-12 hidden md:inline-block nav-button">
       <a href="mailto:glenn@gianmonsterattack.com?subject=contact%20from%20giantmonsterattack" class="text-azul">

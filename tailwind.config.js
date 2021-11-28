@@ -23,7 +23,8 @@ module.exports = {
       body: ['LatoLatinWeb', 'Helvetica', 'Arial', 'sans-serif'],
       extraLight: ['LatoLatinWebLight', 'Helvetica', 'Arial', 'sans-serif'],
       'semi-bold': ['LatoLatinWebSemibold', 'Helvetica', 'Arial', 'sans-serif'],
-      heading: ['LatoLatinWebHeavy', 'Helvetica', 'Arial', 'sans-serif']
+      heading: ['LatoLatinWebHeavy', 'Helvetica', 'Arial', 'sans-serif'],
+      black: ['LatoLatinWebBlack', 'Helvetica', 'Arial', 'sans-serif']
     },
     minWidth: {
       0: '0',
@@ -179,6 +180,11 @@ module.exports = {
       '6xl': '6.4rem'
     }
   },
-  variants: {},
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+      cursor: ['disabled']
+    }
+  },
   plugins: []
 }

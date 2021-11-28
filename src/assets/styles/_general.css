@@ -54,3 +54,7 @@ a.button-video .play-button {
 figcaption {
     @apply text-sm;
 }
+
+.section-header {
+    @apply font-heading tracking-tighter;
+}

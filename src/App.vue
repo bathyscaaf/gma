@@ -77,10 +77,9 @@
       <the-header
         @NAV_CLICK="onNavClick"
         :class="{'header-shadow': isScrolled}"
-        class="hidden md:block "
+        class="hidden md:block"
       />
     </main>
-
   </div>
 </template>
 

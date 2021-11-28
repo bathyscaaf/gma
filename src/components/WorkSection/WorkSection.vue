@@ -26,12 +26,12 @@
 </script>
 
 <template>
-  <section class="w-full bg-work work-section"
+  <section class="w-full bg-work work-section sedimentary-layer"
            id="work-section-soro"
   >
     <header class="container mx-auto p-8 md:pt-12">
-      <h2 class="font-heading text-5xl md:text-5xl text-white opacity-25">
-        Work
+      <h2 class="section-header text-5xl md:text-5xl text-white">
+        WORK
       </h2>
     </header>
     <work-soro class="container px-8" />
@@ -68,7 +68,4 @@
 </template>
 
 <style>
-  .sedimentary-layer {
-    opacity: .15;
-  }
 </style>

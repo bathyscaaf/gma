@@ -7,7 +7,9 @@
   <section class="w-full bg-contact px-8 pb-64 text-khaki">
     <article class="container mx-auto">
       <header class="py-12">
-        <div class="font-heading text-5xl md:text-4xl text-darker">Contact Me</div>
+        <h2 class="section-header text-5xl md:text-4xl text-white">
+          CONTACT
+        </h2>
       </header>
       Via:
       <ul class="list-disc list-inside">

@@ -16,13 +16,13 @@
   <section class="w-full bg-about">
     <article class="container px-16 mx-auto text-white pb-20">
       <header class="pt-12">
-        <div class="font-semi-bold text-5xl md:text-5xl text-graphite opacity-25">
-          About
+        <div class="section-header text-5xl md:text-5xl text-graphite">
+          ABOUT
         </div>
       </header>
       <div class="blurb md:flex items-baseline">
         <div class="md:w-1/3">
-          <span class="text-3xl font-semi-bold">Hi.  I'm Glenn Berry, a front-end web developer and multimedia swiss army knife based in Seattle, WA.</span>
+          <span class="text-3xl font-semi-bold">Hi. I'm Glenn Berry, a front-end web developer and multimedia swiss army knife based in Seattle, WA.</span>
           <div>
             <a href="/bin/glenn_berry_resume.pdf" target="_blank" rel="noopener" class="button bg-khaki text-graphite mt-8 inline-flex no-underline">
               <img src="/img/download-01.svg" alt="download icon" aria-hidden="true" class="svg-download">

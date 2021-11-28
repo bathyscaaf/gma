@@ -1,8 +1,14 @@
 .input {
     @apply shadow rounded p-4 h-16 text-base text-graphite
 }
+.input.is-danger {
+    @apply text-paprika border-2 border-paprika;
+}
 .textarea {
     @apply p-4 shadow rounded text-graphite
+}
+.textarea.is-danger {
+    @apply text-paprika border-2 border-paprika;
 }
 .label {
     @apply mb-2 uppercase font-semi-bold text-base text-white
@@ -12,4 +18,10 @@
 .textarea:focus {
     box-shadow: inset 0 0 6px rgba(0,0,0,.4);
     outline: none;
+}
+
+.error-message {
+    @apply text-white bg-paprika p-4 mt-4;
+    display: inline-flex;
+
 }

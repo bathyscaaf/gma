@@ -7,7 +7,7 @@
   <article class="container mx-auto text-white overflow-hidden px-8">
     <header class="mb-4 leading-tight">
       <h2 class="text-2xl md:text-3xl font-heading">
-        PROJECTS<span class="text-2xl ml-4 md:text-3xl font-heading text-work-light">AND ASSORTED EXPERIMENTS</span>
+        PROJECTS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">AND ASSORTED EXPERIMENTS</span>
       </h2>
     </header>
     <div class="md:mr-8 mt-12 overflow-hidden">
@@ -17,7 +17,7 @@
         <div class="md:w-1/2 mb-8">
           <header>
             <h3 class="text-xl font-semi-bold">
-              TRIESTE<span class="ml-4 opacity-25">Live Music Visuals</span>
+              TRIESTE<span class="ml-4 text-peach">Live Music Visuals</span>
             </h3>
           </header>
           <p>

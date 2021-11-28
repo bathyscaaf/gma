@@ -10,7 +10,7 @@
            alt="Soro Cannabis CRM and Analytics"
            aria-hidden="true"
            class="soro-logo mb-4"/>
-      <span class="text-xl md:text-3xl font-heading">SORO SOFTWARE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-work-light">2016 - PRESENT</span>
+      <span class="text-xl md:text-3xl font-heading">SORO SOFTWARE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-peach">2016 - PRESENT</span>
       <br>
       <span class="font-extraLight">
         Senior Software Engineer, Co-Founder
