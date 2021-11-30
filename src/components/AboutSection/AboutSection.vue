@@ -1,5 +1,5 @@
 <script>
-import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
+import PortalModal from '@/components/_common/PortalModal2/PortalModal.vue'
   export default {
     name: 'AboutSection',
     components: {

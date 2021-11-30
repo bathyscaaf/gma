@@ -58,3 +58,16 @@ figcaption {
 .section-header {
     @apply font-heading tracking-tighter;
 }
+
+/*transitions*/
+.portal-modal-enter {
+    opacity: 0;
+}
+.portal-modal-leave-active {
+    opacity: 0;
+}
+.portal-modal-enter .modal-container,
+.portal-modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

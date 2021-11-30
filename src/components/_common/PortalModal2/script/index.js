@@ -10,6 +10,10 @@ export default {
       type: Boolean,
       default: false
     },
+    hasfooter: {
+      type: Boolean,
+      default: false
+    },
     hasHeader: {
       type: Boolean,
       default: false

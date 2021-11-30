@@ -1,5 +1,6 @@
 @tailwind base;
 @import '_form.css';
 @import '_general.css';
+@import '_portalModal.css';
 
 

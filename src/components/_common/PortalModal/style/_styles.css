@@ -1,11 +1,17 @@
+.portal-modal {
+    @apply sr-only;
+}
+
+.portal-modal.modal-active {
+    @apply not-sr-only fixed inset-0 overflow-y-auto h-full w-full z-40 flex items-center justify-center;
+}
+
 .modal-mask {
     opacity: 0;
-    display: none;
-    transition: opacity 4s ease;
+    transition: opacity 1s ease;
 }
 .modal-mask.modal-active {
-    opacity: .5;
-    display: block;
+    opacity: .7;
 }
 .modal-container {
     position: relative;
@@ -40,15 +46,4 @@
 }
 button:not(:last-child) {
     margin-right: 0.5rem;
-}
-.base-modal-enter {
-    opacity: 0;
-}
-.base-modal-leave-active {
-    opacity: 0;
-}
-.base-modal-enter .modal-container,
-.base-modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
 }

@@ -13,15 +13,18 @@
       name="portal-modal"
     >
       <div
-        class="portal-modal"
-        :class="{'modal-active': show}"
+        class="modal-mask"
+        v-show="show"
+        id="my-modal"
+        @click="onMaskClick"
       >
         <div
-          class="modal-container z-50 shadow bg-white"
+          class="modal-container shadow bg-white"
           :style="customStyles"
           @click.stop
         >
           <header
+            v-if="hasHeader"
             class="modal-header"
             :class="{'is-success': headerStyle === 'success', 'is-danger': headerStyle === 'danger'}"
           >
@@ -42,6 +45,7 @@
             </slot>
           </div>
           <footer
+            v-if="hasfooter"
             class="modal-footer"
           >
             <slot
@@ -51,12 +55,6 @@
             </slot>
           </footer>
         </div>
-        <div
-          class="modal-mask fixed inset-0 bg-gray-600 z-40 overflow-y-auto h-full w-full "
-          :class="{'modal-active': show}"
-          id="my-modal"
-          @click="onMaskClick"
-        ></div>
       </div>
     </transition>
   </MountingPortal>
