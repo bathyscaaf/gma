@@ -1,8 +1,14 @@
 <script>
+import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
   export default {
     name: 'AboutSection',
     components: {
-      // LabBackground,
+      PortalModal
+    },
+    data () {
+      return {
+        showTestModal: false
+      }
     },
     methods: {
       openModal () {
@@ -32,6 +38,11 @@
               </div>
             </a>
           </div>
+          <div class="ml-4 bg-graphite text-white text-sm font-heading rounded p-2 opacity-25"
+               @click="showTestModal = true"
+          >
+            Test Modal
+          </div>
         </div>
         <div class="md:w-2/3 md:ml-8 text-2xl">
           <p>
@@ -52,6 +63,13 @@
         </div>
       </div>
     </article>
+    <portal-modal
+      :show="showTestModal"
+      modal-type="image"
+      @CLOSE_MODAL="showTestModal = false"
+    >
+      Mooo
+    </portal-modal>
   </section>
 </template>
 

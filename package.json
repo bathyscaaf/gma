@@ -12,6 +12,7 @@
     "gsap": "file:gsap-bonus.tgz",
     "lottie-web": "^5.8.1",
     "lozad": "^1.16.0",
+    "portal-vue": "^2.1.7",
     "vue": "^2.6.11",
     "vue-100vh": "^0.1.1",
     "vue-lottie": "^0.2.1",

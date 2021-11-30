@@ -62,25 +62,25 @@
 </script>
 
 <template>
-  <div>
-    <main id="app">
-      <monster-scape id="marquee-section" :paused="monsterPaused" />
-      <about-section id="about-section" @MODAL_OPEN="openModal" />
-      <lab-lottie />
-      <work-section id="work-section" @MODAL_OPEN="openModal" />
-      <eye-cave />
-      <contact-section id="contact-section" @MODAL_OPEN="openModal" />
-      <the-header
-        @NAV_CLICK="onNavClick"
-        class="header-shadow md:hidden"
-      />
-      <the-header
-        @NAV_CLICK="onNavClick"
-        :class="{'header-shadow': isScrolled}"
-        class="hidden md:block"
-      />
-    </main>
-  </div>
+  <main id="app"
+        class="mooooooo"
+  >
+    <monster-scape id="marquee-section" :paused="monsterPaused" />
+    <about-section id="about-section" @MODAL_OPEN="openModal" />
+    <lab-lottie />
+    <work-section id="work-section" @MODAL_OPEN="openModal" />
+    <eye-cave />
+    <contact-section id="contact-section" @MODAL_OPEN="openModal" />
+    <the-header
+      @NAV_CLICK="onNavClick"
+      class="header-shadow md:hidden"
+    />
+    <the-header
+      @NAV_CLICK="onNavClick"
+      :class="{'header-shadow': isScrolled}"
+      class="hidden md:block"
+    />
+  </main>
 </template>
 
 <style>

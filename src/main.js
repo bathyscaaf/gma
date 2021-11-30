@@ -5,7 +5,8 @@ import VueMq from 'vue-mq'
 import Lottie from 'lottie-web'
 import { ObserveVisibility } from 'vue-observe-visibility'
 import Vuelidate from 'vuelidate'
-// import store from './store'
+import PortalVue from 'portal-vue'
+Vue.use(PortalVue)
 Vue.use(Vuelidate)
 Vue.directive('observe-visibility', ObserveVisibility)
 Vue.use(VueMq, {

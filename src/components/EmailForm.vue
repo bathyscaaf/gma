@@ -1,5 +1,6 @@
 <script>
   import { required, email } from 'vuelidate/lib/validators'
+  const touchMap = new WeakMap()
   export default {
     name: 'EmailForm',
     data () {
@@ -15,6 +16,13 @@
       }
     },
     methods: {
+      delayTouch ($v) {
+        $v.$reset()
+        if (touchMap.has($v)) {
+          clearTimeout(touchMap.get($v))
+        }
+        touchMap.set($v, setTimeout($v.$touch, 2000))
+      },
       sendEmail () {
         this.$v.$touch()
         if (!this.$v.$error) {
@@ -53,7 +61,7 @@
         </label>
         <input class="input md:w-1/2"
                v-model="emailAddress"
-               @input="$v.emailAddress.$touch()"
+               @input="delayTouch($v.emailAddress)"
                :class="{ 'is-danger': $v.emailAddress.$error}"
                type="email"
                name="email"
