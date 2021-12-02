@@ -24,6 +24,9 @@
 .close-btn {
     @apply cursor-pointer;
 }
+.close-btn:hover .close-btn-bg {
+    @apply fill-paprika-hover;
+}
 .close-btn-bg {
     @apply fill-paprika;
 }

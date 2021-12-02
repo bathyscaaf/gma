@@ -67,9 +67,13 @@
   >
     <monster-scape id="marquee-section" :paused="monsterPaused" />
     <about-section id="about-section" @MODAL_OPEN="openModal" />
-    <lab-lottie />
+    <lab-lottie
+      aria-hidden="true"
+    />
     <work-section id="work-section" @MODAL_OPEN="openModal" />
-    <eye-cave />
+    <eye-cave
+      aria-hidden="true"
+    />
     <contact-section id="contact-section" @MODAL_OPEN="openModal" />
     <the-header
       @NAV_CLICK="onNavClick"

@@ -25,7 +25,7 @@ only screen and (                min-resolution: 2dppx) {
 /* -------------  elements -------------------- */
 .button {
     min-width: 10rem;
-    @apply pl-4 pr-4 pt-2 pb-2 font-semi-bold rounded shadow flex justify-center items-center
+    @apply filter hover:saturate-200 pl-4 pr-4 pt-2 pb-2 font-semi-bold rounded shadow flex justify-center items-center
 }
 
 .button-image {

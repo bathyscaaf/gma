@@ -20,7 +20,7 @@
       >
         <div
           class="modal-container min-w-1/4 max-w-3/4"
-          :class="{'no-header': !hasHeader, 'no-footer': !hasfooter}"
+          :class="{'no-header': !hasHeader, 'no-footer': !hasFooter}"
           :style="customStyles"
           @click.stop
         >
@@ -67,7 +67,7 @@
           </div>
           <footer
             v-if="hasFooter"
-            class="modal-footer rounded-b-lg bg-peach pl-12 pr-4 py-4 font-semibold text-xl flex justify-end"
+            class="modal-footer rounded-b-lg bg-peach pl-12 pr-4 py-4 font-semibold text-xl"
           >
             <slot
               name="footer"

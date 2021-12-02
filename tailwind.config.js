@@ -124,6 +124,7 @@ module.exports = {
     }),
     fill: theme => ({
       paprika: theme('colors.paprika'),
+      'paprika-hover': theme('colors.paprika-hover'),
       battleship: theme('colors.battleship'),
       graphite: theme('colors.graphite'),
       azul: theme('colors.azul'),
@@ -137,7 +138,7 @@ module.exports = {
       'peach-65': theme('colors.peach-65'),
       'white-75': theme('colors.white-75'),
       transparent: theme('colors.transparent'),
-      darker: theme('colors.darker')
+      darker: theme('colors.darker'),
     }),
     extend: {
       width: {
@@ -148,6 +149,7 @@ module.exports = {
       },
       colors: {
         paprika: 'hsla(359, 85%, 64%, 1)',
+        'paprika-hover': 'hsla(359, 85%, 60%, 1)',
         battleship: 'hsla(196.7, 23%, 53%, 1)',
         city: 'hsla(196.7, 23%, 53%, 1)',
         graphite: 'hsla(27, 8%, 23%, 1)',

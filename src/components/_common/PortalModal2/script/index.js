@@ -18,14 +18,6 @@ export default {
       type: Boolean,
       default: false
     },
-    modalType: {
-      type: String,
-      default: 'card'
-    },
-    modalStyle: {
-      type: String,
-      default: 'info'
-    },
     customStyles: {
       type: String,
       default: ''

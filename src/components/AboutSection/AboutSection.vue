@@ -38,11 +38,11 @@ import PortalModal from '@/components/_common/PortalModal2/PortalModal.vue'
               </div>
             </a>
           </div>
-          <div class="ml-4 bg-graphite text-white text-sm font-heading rounded p-2 opacity-25"
-               @click="showTestModal = true"
+          <button class="button bg-graphite text-white"
+                  @click="showTestModal = true"
           >
             Test Modal
-          </div>
+          </button>
         </div>
         <div class="md:w-2/3 md:ml-8 text-2xl">
           <p>
@@ -91,7 +91,14 @@ import PortalModal from '@/components/_common/PortalModal2/PortalModal.vue'
         Cras et nisi fringilla mi sodales iaculis nec eu nisl. Aliquam erat volutpat. Cras volutpat sapien diam, sit amet accumsan mi varius ac. Praesent lectus ante, pellentesque vel vehicula sollicitudin, vehicula eu orci. Mauris luctus nisl sit amet dolor volutpat, id aliquam metus lacinia. Pellentesque efficitur neque scelerisque ligula venenatis rutrum vel ac ipsum. Duis gravida vehicula ex a placerat. Suspendisse congue tempus dui, nec consequat metus tempus in. Aliquam erat volutpat. Vivamus vitae urna lacinia, sollicitudin magna mollis, varius sapien. Donec in tempor arcu. Aliquam rhoncus, enim at ultrices porttitor, nisl dui laoreet eros, elementum pulvinar eros nisi at risus. Ut sagittis est a mi congue viverra.
       </template>
       <template v-slot:footer>
-        <button class="button bg-paprika text-white">Close</button>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showTestModal = !showTestModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
       </template>
     </portal-modal>
   </section>
