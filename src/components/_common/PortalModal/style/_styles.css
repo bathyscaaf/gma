@@ -1,49 +1,49 @@
-.portal-modal {
-    @apply sr-only;
-}
+/*.portal-modal {*/
+/*    @apply sr-only;*/
+/*}*/
 
-.portal-modal.modal-active {
-    @apply not-sr-only fixed inset-0 overflow-y-auto h-full w-full z-40 flex items-center justify-center;
-}
+/*.portal-modal.modal-active {*/
+/*    @apply not-sr-only fixed inset-0 overflow-y-auto h-full w-full z-40 flex items-center justify-center;*/
+/*}*/
 
-.modal-mask {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-.modal-mask.modal-active {
-    opacity: .7;
-}
-.modal-container {
-    position: relative;
-    z-index: 9999;
-    border-radius: 1rem;
-    display: inline-flex;
-    flex-direction: column;
-    margin: 4rem 1rem;
-    max-height: 80%;
-    max-width: 90%;
-    width: 40rem;
-    overflow: hidden;
-    transition: all .3s ease;
-}
-.modal-header {
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    padding: 0.5rem 1rem;
-}
-.modal-body {
-    background-color: #fff;
-    padding: 1rem;
-    overflow: auto;
-}
-.modal-footer {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-button:not(:last-child) {
-    margin-right: 0.5rem;
-}
+/*.modal-mask {*/
+/*    opacity: 0;*/
+/*    transition: opacity 1s ease;*/
+/*}*/
+/*.modal-mask.modal-active {*/
+/*    opacity: .7;*/
+/*}*/
+/*.modal-container {*/
+/*    position: relative;*/
+/*    z-index: 9999;*/
+/*    border-radius: 1rem;*/
+/*    display: inline-flex;*/
+/*    flex-direction: column;*/
+/*    margin: 4rem 1rem;*/
+/*    max-height: 80%;*/
+/*    max-width: 90%;*/
+/*    width: 40rem;*/
+/*    overflow: hidden;*/
+/*    transition: all .3s ease;*/
+/*}*/
+/*.modal-header {*/
+/*    border-top-left-radius: 1rem;*/
+/*    border-top-right-radius: 1rem;*/
+/*    padding: 0.5rem 1rem;*/
+/*}*/
+/*.modal-body {*/
+/*    background-color: #fff;*/
+/*    padding: 1rem;*/
+/*    overflow: auto;*/
+/*}*/
+/*.modal-footer {*/
+/*    border-bottom-left-radius: 1rem;*/
+/*    border-bottom-right-radius: 1rem;*/
+/*    padding: 0.5rem 1rem;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: flex-end;*/
+/*}*/
+/*button:not(:last-child) {*/
+/*    margin-right: 0.5rem;*/
+/*}*/

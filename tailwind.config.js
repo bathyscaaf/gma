@@ -160,6 +160,7 @@ module.exports = {
         work: 'hsla(198.1, 27%, 39%, 1)',
         'work-light': 'hsla(198.1, 27%, 69%, 1)',
         about: 'hsla(0.4, 88%, 65%, 1)',
+        // about: 'hsla(6, 87%, 61%, 1)',
         contact: 'hsla(198.9, 56%, 44%, 1)',
         'white-75': 'hsla(360, 100%, 100%, 0.75)',
         transparent: 'transparent',
@@ -182,6 +183,8 @@ module.exports = {
   },
   variants: {
     extend: {
+      filter: ['hover'],
+      saturate: ['hover'],
       opacity: ['disabled'],
       cursor: ['disabled']
     }

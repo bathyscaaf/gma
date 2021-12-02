@@ -1,5 +1,29 @@
 .modal-mask {
     @apply fixed inset-0 bg-graphite z-50 overflow-y-auto h-full w-full flex items-center justify-center;
     background-color: rgba(0, 0, 0, .5);
+    /*background-color: rgba(256, 256, 256, 1);*/
     transition: opacity .3s ease;
+}
+
+.modal-container {
+    transition: all .3s ease;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5));
+}
+.modal-header {
+    @apply rounded-t-lg;
+}
+.modal-footer {
+    @apply rounded-b-lg;
+}
+.modal-container.no-header {
+    @apply rounded-t-lg;
+}
+.modal-container.no-footer {
+    @apply rounded-b-lg;
+}
+.close-btn {
+    @apply cursor-pointer;
+}
+.close-btn-bg {
+    @apply fill-paprika;
 }

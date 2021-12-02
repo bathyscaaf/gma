@@ -10,7 +10,7 @@ export default {
       type: Boolean,
       default: false
     },
-    hasfooter: {
+    hasFooter: {
       type: Boolean,
       default: false
     },
