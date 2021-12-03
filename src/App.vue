@@ -3,13 +3,18 @@
   import MonsterScape from '@/components/MonsterScape'
   import AboutSection from '@/components/AboutSection/AboutSection'
   import LabLottie from '@/components/LabLottie'
-  import WorkSection from '@/components/WorkSection/WorkSection'
-  import ContactSection from '@/components/ContactSection/ContactSection'
+  // import WorkSection from '@/components/WorkSection/WorkSection'
+  // import ContactSection from '@/components/ContactSection/ContactSection'
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
   import EyeCave from '@/components/EyeCaveContact'
   gsap.registerPlugin(ScrollToPlugin)
-
+  const workSection = () => import(
+    /* webpackchunkname: "work-section" */ '@/components/WorkSection/WorkSection.vue'
+    )
+  const contactSection = () => import(
+    /* webpackchunkname: "work-section" */ '@/components/ContactSection/ContactSection.vue'
+    )
   const htmlEl = document.documentElement
   export default {
     components: {
@@ -18,8 +23,9 @@
       AboutSection,
       LabLottie,
       EyeCave,
-      WorkSection,
-      ContactSection
+      workSection,
+      // WorkSection,
+      contactSection
     },
     data () {
       return {
@@ -32,6 +38,11 @@
       isScrolled () {
         return this.scrollPosition > 0
       }
+    },
+    created () {
+      window.addEventListener('scroll', (e) => {
+        this.scrollPosition = window.top.scrollY
+      })
     },
     methods: {
       openModal () {
@@ -52,11 +63,6 @@
         // console.log(target)
         gsap.to(window, { duration: 0.75, scrollTo: target, ease: 'expo.inOut' })
       }
-    },
-    created () {
-      window.addEventListener('scroll', (e) => {
-        this.scrollPosition = window.top.scrollY
-      })
     }
   }
 </script>
