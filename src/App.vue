@@ -2,18 +2,21 @@
   import TheHeader from '@/components/TheHeader'
   import MonsterScape from '@/components/MonsterScape'
   import AboutSection from '@/components/AboutSection/AboutSection'
-  import LabLottie from '@/components/LabLottie'
+  // import LabLottie from '@/components/LabLottie'
   // import WorkSection from '@/components/WorkSection/WorkSection'
   // import ContactSection from '@/components/ContactSection/ContactSection'
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
   import EyeCave from '@/components/EyeCaveContact'
   gsap.registerPlugin(ScrollToPlugin)
+  const labLottie = () => import(
+    /* webpackchunkname: "lab-lottie" */ '@/components/LabLottie.vue'
+    )
   const workSection = () => import(
     /* webpackchunkname: "work-section" */ '@/components/WorkSection/WorkSection.vue'
     )
   const contactSection = () => import(
-    /* webpackchunkname: "work-section" */ '@/components/ContactSection/ContactSection.vue'
+    /* webpackchunkname: "contact-section" */ '@/components/ContactSection/ContactSection.vue'
     )
   const htmlEl = document.documentElement
   export default {
@@ -21,7 +24,7 @@
       TheHeader,
       MonsterScape,
       AboutSection,
-      LabLottie,
+      labLottie,
       EyeCave,
       workSection,
       // WorkSection,
@@ -94,7 +97,7 @@
 </template>
 
 <style>
-html.modal-open {
-  overflow:hidden;
-}
+  html.modal-open {
+    overflow:hidden;
+  }
 </style>

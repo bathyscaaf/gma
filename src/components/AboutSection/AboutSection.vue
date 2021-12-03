@@ -22,7 +22,7 @@ import PortalModal from '@/components/_common/PortalModal2/PortalModal.vue'
   <section class="w-full bg-about">
     <article class="container px-16 mx-auto text-white pb-20">
       <header class="pt-12">
-        <div class="section-header text-5xl md:text-5xl text-graphite">
+        <div class="section-header text-outline-light text-5xl md:text-5xl text-graphite">
           ABOUT
         </div>
       </header>

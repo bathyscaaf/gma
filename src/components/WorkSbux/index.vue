@@ -6,13 +6,13 @@
 <template>
   <article class="container mx-auto text-white overflow-hidden px-8">
     <header class="mb-4 leading-tight">
-      <h2 class="text-2xl md:text-3xl font-heading">STARBUCKS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">2008 - 2015</span></h2>
+      <h2 class="text-2xl md:text-3xl font-heading text-outline-dark">STARBUCKS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">2008 - 2015</span></h2>
     </header>
     <div class="md:mr-8 mt-12 overflow-hidden">
       <section class="flex flex-wrap md:flex-no-wrap md:mr-8" v-observe-visibility="visibilityChanged">
         <div class="md:w-1/2 mb-8">
           <header>
-            <h3 class="text-xl font-semi-bold">STARBUCKS.COM<span class="ml-4 text-peach">AND RELATED MICROSITES</span></h3>
+            <h3 class="text-xl font-semi-bold text-outline-dark">STARBUCKS.COM<span class="ml-2 text-peach">&amp; RELATED MICROSITES</span></h3>
           </header>
           <p>
             During my 6 years at Starbucks our website grew from a few promotional pages to a fully responsive,
@@ -71,7 +71,7 @@
       </section>
       <section>
         <header class="my-12">
-          <h3 class="text-xl font-semi-bold">STARBUCKS RETI<span class="text-peach ml-4">INSTALLATIONS, KIOSKS</span></h3>
+          <h3 class="text-xl font-semi-bold text-outline-dark">STARBUCKS RETI<span class="text-peach ml-4">INSTALLATIONS, KIOSKS</span></h3>
           <span>
             Research into Emerging Technologies team &mdash; I worked with the Starbucks RETI team conceptualizing, prototyping, and executing innovative in-store experiences.
             <br>Some of these projects, such as those below, made it into retail stores, while others remained conceptual prototypes
@@ -79,7 +79,7 @@
         </header>
         <div class="flex flex-wrap md:flex-no-wrap">
           <div class="md:w-1/2">
-            <h4 class="text-xl font-semi-bold">Magic Chalkboard<span class="ml-4 text-peach">RETI</span></h4>
+            <h4 class="text-xl font-semi-bold text-outline-dark">Magic Chalkboard<span class="ml-4 text-peach">RETI</span></h4>
             <p class="mt-2">
               Interactive touchscreens at the Disneyland and Disneyworld Starbucks stores &mdash; a video camera
               takes real-time video of the immediate area which is transformed into "chalk" outlines on the
@@ -131,7 +131,7 @@
 
         <div class="flex flex-wrap md:flex-no-wrap mt-12 mb-2">
           <div class="md:w-1/2">
-            <h4 class="text-xl font-semi-bold">Coffee Passion Wall<span class="ml-4 text-peach">RETI</span></h4>
+            <h4 class="text-xl font-semi-bold text-outline-dark">Coffee Passion Wall<span class="ml-4 text-peach">RETI</span></h4>
             <p class="mt-2">
               A six screen matrix on display in the Disneyland and Disneyworld Starbucks stores. The video plays
               like an organic, (very) slowly animated painting &mdash; intended add to the store's ambiance, yet remain
@@ -195,7 +195,7 @@
         <div class="mt-12 mb-2 flex">
           <div>
             <div>
-              <h4 class="text-xl font-semi-bold">Additional RETI Projects</h4>
+              <h4 class="text-xl font-semi-bold text-outline-dark">Additional RETI Projects</h4>
               <p class="mt-2 mb-4">
                 Some additional examples.  Details within the modal windows.
               </p>

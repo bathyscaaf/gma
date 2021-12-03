@@ -6,8 +6,8 @@
 <template>
   <article class="container mx-auto text-white overflow-hidden px-8">
     <header class="mb-4 leading-tight">
-      <h2 class="text-2xl md:text-3xl font-heading">
-        PROJECTS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">AND ASSORTED EXPERIMENTS</span>
+      <h2 class="text-2xl md:text-3xl font-heading text-outline-dark">
+        PROJECTS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">&amp; ASSORTED EXPERIMENTS</span>
       </h2>
     </header>
     <div class="md:mr-8 mt-12 overflow-hidden">
@@ -16,7 +16,7 @@
       >
         <div class="md:w-1/2 mb-8">
           <header>
-            <h3 class="text-xl font-semi-bold">
+            <h3 class="text-xl font-semi-bold text-outline-dark">
               TRIESTE<span class="ml-4 text-peach">Live Music Visuals</span>
             </h3>
           </header>

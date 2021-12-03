@@ -23,8 +23,9 @@ module.exports = {
       body: ['LatoLatinWeb', 'Helvetica', 'Arial', 'sans-serif'],
       extraLight: ['LatoLatinWebLight', 'Helvetica', 'Arial', 'sans-serif'],
       'semi-bold': ['LatoLatinWebSemibold', 'Helvetica', 'Arial', 'sans-serif'],
-      heading: ['LatoLatinWebHeavy', 'Helvetica', 'Arial', 'sans-serif'],
-      black: ['LatoLatinWebBlack', 'Helvetica', 'Arial', 'sans-serif']
+      heading: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+      // heading: ['LatoLatinWebHeavy', 'Helvetica', 'Arial', 'sans-serif'],
+      // black: ['LatoLatinWebBlack', 'Helvetica', 'Arial', 'sans-serif']
     },
     minWidth: {
       0: '0',
@@ -138,8 +139,17 @@ module.exports = {
       'peach-65': theme('colors.peach-65'),
       'white-75': theme('colors.white-75'),
       transparent: theme('colors.transparent'),
-      darker: theme('colors.darker'),
+      darker: theme('colors.darker')
     }),
+    letterSpacing: {
+      tightest: '-.075em',
+      tighter: '-.05em',
+      tight: '-.025em',
+      normal: '0',
+      wide: '.025em',
+      wider: '.05em',
+      widest: '.1em'
+    },
     extend: {
       width: {
         'title-sm-portrait': '20rem',

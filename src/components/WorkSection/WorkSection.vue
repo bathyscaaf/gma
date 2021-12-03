@@ -30,7 +30,7 @@
            id="work-section-soro"
   >
     <header class="container mx-auto p-8 md:pt-12">
-      <h2 class="section-header text-5xl md:text-5xl text-white">
+      <h2 class="section-header text-outline-dark text-5xl md:text-5xl text-white">
         WORK
       </h2>
     </header>

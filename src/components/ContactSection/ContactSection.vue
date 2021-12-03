@@ -7,7 +7,7 @@
   <section class="w-full bg-contact px-8 pb-64 text-white">
     <article class="container mx-auto">
       <header class="py-12">
-        <h2 class="section-header text-5xl md:text-4xl text-white">
+        <h2 class="section-header outline-dark text-5xl md:text-4xl text-white">
           CONTACT
         </h2>
       </header>

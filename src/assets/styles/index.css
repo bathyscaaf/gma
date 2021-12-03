@@ -2,30 +2,30 @@
 .header-shadow {
     box-shadow: 0 -1px 3px 1px rgba(0,0,0,0.4);
 }
-@font-face {
-    font-family: LatoLatinWebBlack;
-    src: url(/public/fonts/LatoLatin-Black.woff2) format("woff2");
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: LatoLatinWebBlack;*/
+/*    src: url(/public/fonts/LatoLatin-Black.woff2) format("woff2");*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-display: swap;*/
+/*}*/
 /* Webfont: LatoLatin-Bold */
-@font-face {
-    font-family: LatoLatinWebBold;
-    src: url('/fonts/LatoLatin-Bold.woff2') format("woff2");
-    font-style: normal;
-    font-weight: bold;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: LatoLatinWebBold;*/
+/*    src: url('/fonts/LatoLatin-Bold.woff2') format("woff2");*/
+/*    font-style: normal;*/
+/*    font-weight: bold;*/
+/*    font-display: swap;*/
+/*}*/
 
 /* Webfont: LatoLatin-Heavy */
-@font-face {
-    font-family: LatoLatinWebHeavy;
-    src: url('/fonts/LatoLatin-Heavy.woff2') format("woff2");
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: LatoLatinWebHeavy;*/
+/*    src: url('/fonts/LatoLatin-Heavy.woff2') format("woff2");*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 /* Webfont: LatoLatin-Light */
 @font-face {
@@ -36,14 +36,14 @@
     font-display: swap;
 }
 
-/* Webfont: LatoLatin-Medium */
-@font-face {
-    font-family: LatoLatinWebMedium;
-    src: url('/fonts/LatoLatin-Medium.woff2') format("woff2");
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-}
+/*!* Webfont: LatoLatin-Medium *!*/
+/*@font-face {*/
+/*    font-family: LatoLatinWebMedium;*/
+/*    src: url('/fonts/LatoLatin-Medium.woff2') format("woff2");*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 /* Webfont: LatoLatin-Regular */
 @font-face {
