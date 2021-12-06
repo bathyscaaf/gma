@@ -32,7 +32,7 @@
                 <a class="button-image"
                    role="button"
                    title="Starbucks Homepage (2015) modal button"
-                   @click.prevent="openModal('homepage')">
+                   @click.prevent="showHomeModal = true">
                   <app-img lazy-src="/img/sbux/sbux_homepage@0.5x.png"
                            class="mb-8 shadow portrait-sm:mr-8 landscape-sm:mr-8"
                            alt="Starbucks Homepage (2015)"
@@ -44,7 +44,7 @@
                 <a class="button-image"
                    role="button"
                    title="Mobile page with media player modal button"
-                   @click.prevent="openModal('coffeehouse')">
+                   @click.prevent="showHouseModal = true">
                   <app-img lazy-src="/img/sbux/sbux_ch_mbx2@0.25x.png"
                            class="mb-8 shadow mr-8 md:ml-0 md:mr-0"
                            alt="Mobile page with media player"
@@ -56,13 +56,14 @@
             <div>
               <a class="button-image"
                  role="button"
-                 title="Mobile page with media player modal button"
-                 @click.prevent="openModal('htb')">
+                 title="How to Brew modal button"
+                 @click.prevent="showBrewModal = true">
                 <app-img lazy-src="/img/sbux/sbux_htb@0.5x.png"
                          class="shadow md:ml-0"
                          alt="How to Brew"
                          :height="416"
-                         :width="228"/>
+                         :width="228"
+                />
               </a>
             </div>
           </div>
@@ -104,10 +105,10 @@
               <div class="inline-block relative">
                 <a role="button"
                    class="button-image button-video shadow mb-8"
-                   title="Magic Chalkboard Disneyland modal button"
-                   @click.prevent="openModal('mc1')">
+                   title="Magic Chalkboard Disneyland Video modal button"
+                   @click.prevent="showMagicVideo = true">
                   <app-img lazy-src="/img/sbux/MagicChalkboard_Wide_x2@0.5x.png"
-                           alt="Magic Chalkboard in use"
+                           alt="Magic Chalkboard (video)"
                            :width="358"
                            :height="202"/>
                   <div class="play-button"></div>
@@ -118,10 +119,10 @@
             <div>
               <a role="button"
                  class="button-image shadow landscape-sm:ml-8 md:ml-8"
-                 title="Magic Chalkboard Disneyland modal button"
-                 @click.prevent="openModal('mc2')">
+                 title="Magic Chalkboard Disneyland image modal button"
+                 @click.prevent="showMagicPicture = true">
                 <app-img lazy-src="/img/sbux/MagicChalkboard1_x2@0.25x.png"
-                         alt="Magic Chalkboard in use"
+                         alt="Magic Chalkboard"
                          :height="238"
                          :width="170"/>
               </a>
@@ -251,53 +252,153 @@
 
       </section>
     </div>
-    <template v-if="modalTarget === 'homepage'">
-      <card-modal title="Starbucks Homepage (2015)" :active="modalActive" @MODAL_CLOSE="closeModal">
+    <portal-modal
+      :show="showHomeModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showHomeModal = false"
+    >
+      <template v-slot:header>
+        Starbucks Homepage (2015)
+      </template>
+      <template v-slot:content>
         <app-img lazy-src="/img/sbux/sbux_homepage.png"
                  class="shadow"
                  alt="Starbucks Homepage (2015)"
                  :height="468"
                  :width="441"/>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'coffeehouse'">
-      <card-modal title="Starbucks Homepage (2015)" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <app-img lazy-src="/img/sbux/sbux_ch_mbx2.png"
-                 class="shadow"
-                 alt="Mobile page with media player"
-                 :height="638/2"
-                 :width="1065/2"/>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'htb'">
-      <card-modal title="Starbucks Homepage (2015)" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <app-img lazy-src="/img/sbux/sbux_htb.png"
-                 class="shadow"
-                 alt="How to Brew"
-                 :height="832"
-                 :width="454"/>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'mc1'">
-      <card-modal title="Magic Chalkboard in use" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <div class="bg-black">
-          <video src="/video/magic_chalkboard_baseline.mp4" controls mute autoplay />
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showHomeModal = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
         </div>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'mc2'">
-      <card-modal title="Magic Chalkboard, Disneyland" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <app-img lazy-src="/img/sbux/MagicChalkboard1_x2.png"
-                 class="shadow"
-                 alt="Magic Chalkboard, Disneyland"
-                 :height="475"
-                 :width="337"/>
-      </card-modal>
-    </template>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showHouseModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showHouseModal = false"
+    >
+      <template v-slot:header>
+        Mobile page with media player
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <app-img lazy-src="/img/sbux_ch_mbx2.jpg"
+                   class="shadow"
+                   alt="Mobile page with media player"
+                   :width="638/2"
+                   :height="1065/2"
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showHouseModal = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showBrewModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showBrewModal = false"
+    >
+      <template v-slot:header>
+        How to Brew
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <app-img lazy-src="/img/sbux/sbux_htb.png"
+                   class="shadow"
+                   alt="How to Brew"
+                   :height="832"
+                   :width="454"
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showBrewModal = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showMagicVideo"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showMagicVideo = false"
+    >
+      <template v-slot:header>
+        Magic Chalkboard (video)
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <video
+            src="/video/magic_chalkboard_baseline.mp4"
+            controls
+            mute
+            autoplay
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showMagicVideo = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showMagicPicture"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showMagicPicture = false"
+    >
+      <template v-slot:header>
+        Magic Chalkboard
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <app-img lazy-src="/img/sbux/MagicChalkboard1_x2.png"
+                   class="shadow"
+                   alt="Magic Chalkboard, Disneyland"
+                   :height="475"
+                   :width="337"
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showMagicPicture = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
 
     <template v-if="modalTarget === 'cpwVid'">
       <card-modal title="Coffee Passion Wall" :active="modalActive" @MODAL_CLOSE="closeModal">

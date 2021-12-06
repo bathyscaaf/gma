@@ -1,13 +1,20 @@
+import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
 import AppImg from '@/components/_common/AppImg'
 import CardModal from '@/components/_common/CardModal2/CardModal'
 export default {
   name: 'WorkSbux',
   components: {
+    PortalModal,
     CardModal,
     AppImg
   },
   data () {
     return {
+      showHomeModal: false,
+      showBrewModal: false,
+      showHouseModal: false,
+      showMagicVideo: false,
+      showMagicPicture: false,
       modalTarget: null,
       modalActive: false,
       imgList: [

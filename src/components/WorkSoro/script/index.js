@@ -1,13 +1,19 @@
 import AppImg from '@/components/_common/AppImg'
-import CardModal from '@/components/_common/CardModal2/CardModal'
+import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
+
 export default {
   name: 'WorkSoro',
   components: {
-    CardModal,
-    AppImg
+    AppImg,
+    PortalModal
   },
   data () {
     return {
+      showUserModal: false,
+      showCustModal: false,
+      showReportModal: false,
+      showMobileModal: false,
+      showCustDetModal: false,
       modalTarget: null,
       modalActive: false
     }

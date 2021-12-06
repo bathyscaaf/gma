@@ -12,10 +12,6 @@
                background-color="transparent"
                class="soro-logo mb-4"
       />
-      <!--      <img src="/img/soro/logo_byline.svg"-->
-      <!--           alt="Soro Cannabis CRM and Analytics"-->
-      <!--           aria-hidden="true"-->
-      <!--           class="soro-logo mb-4"/>-->
       <span class="text-xl md:text-3xl font-heading">SORO SOFTWARE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-peach">2016 - PRESENT</span>
       <br>
       <span class="font-extraLight">
@@ -32,7 +28,7 @@
         <figure class="soro-ss mb-8 md:mr-8 landscape-sm:mr-8">
           <a role="button"
              title="Soro User Homepage modal button"
-             @click.prevent="openModal('soroHome')">
+             @click.prevent="showUserModal = true">
             <app-img lazy-src="/img/soro/home@0.25x.jpg"
                      alt="Soro User Homepage"
                      class="button-image shadow"
@@ -58,7 +54,7 @@
         <figure class="soro-ss mb-8 md:mr-8">
           <a role="button"
              title="Customers landing page w/search modal button"
-             @click.prevent="openModal('soroCL')">
+             @click.prevent="showCustModal = true">
             <app-img key="0"
                      lazy-src="/img/soro/CustomerDashboard2@0.25x.jpg"
                      alt="Customers landing page w/search"
@@ -68,24 +64,10 @@
           </a>
           <figcaption>Customers landing page w/search</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'soroCL'">
-          <card-modal title="Customers landing page" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div>
-              <app-img key="1"
-                       lazy-src="/img/soro/CustomerDashboard2.jpg"
-                       class="shadow"
-                       alt="Customers landing page"
-                       :width="1265"
-                       :height="799"/>
-            </div>
-          </card-modal>
-        </template>
-
         <figure class="soro-ss mb-8 md:mr-8 landscape-sm:mr-8">
           <a role="button"
              title="Customer Details modal button"
-             @click.prevent="openModal('soroCD')">
+             @click.prevent="showCustDetModal = true">
             <app-img key="2"
                      lazy-src="/img/soro/CustomerDetail_summary@0.25x.jpg"
                      alt="Customer Details"
@@ -95,24 +77,10 @@
           </a>
           <figcaption>Customer Details</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'soroCD'">
-          <card-modal title="Customer Details" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div>
-              <app-img key="3"
-                       lazy-src="/img/soro/CustomerDetail_summary.jpg"
-                       class="shadow"
-                       alt="Customer Details"
-                       :width="1604"
-                       :height="1066"/>
-            </div>
-          </card-modal>
-        </template>
-
         <figure class="soro-ss mb-8 md:mr-8">
           <a role="button"
              title="Customer Details (mobile view)"
-             @click.prevent="openModal('soroCdMobile')">
+             @click.prevent="showMobileModal = true">
             <app-img key="4"
                      lazy-src="/img/soro/CD_mobile@0.25x.jpg"
                      alt="Customer Details (mobile view)"
@@ -124,24 +92,10 @@
           </a>
           <figcaption>Mobile</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'soroCdMobile'">
-          <card-modal title="Customer Details (Mobile)" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div class="">
-              <app-img key="5"
-                       lazy-src="/img/soro/CD_mobile.jpg"
-                       class="shadow"
-                       alt="Customer Details (Mobile)"
-                       :width="824/2"
-                       :height="1477/2"/>
-            </div>
-          </card-modal>
-        </template>
-
         <figure class="soro-ss mb-8 md:mr-8">
           <a role="button"
              title="Total Sales by Product report modal button"
-             @click.prevent="openModal('soroReport')">
+             @click.prevent="showReportModal = true">
             <app-img key="6"
                      lazy-src="/img/soro/TotalSalesByProducts@0.25x.jpg"
                      alt="Total Sales by Product report"
@@ -152,21 +106,7 @@
           </a>
           <figcaption>Total Sales by Product report</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'soroReport'">
-          <card-modal title="Total Sales by Product report" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div class="">
-              <app-img key="7"
-                       lazy-src="/img/soro/TotalSalesByProducts.jpg"
-                       class="shadow"
-                       alt="Total Sales by Product report"
-                       :width="1604"
-                       :height="1064"/>
-            </div>
-          </card-modal>
-        </template>
       </div>
-
       <p class="py-2">
         Soro is CRM and analytics software tailored for the cannabis industry. It provides all of a organization's customer data in one place &mdash; per customer sales tasks/contacts/metrics/info and granular reporting on sales accounts, product sales (category and individual), account health, salesperson activity, and more.
         <br>
@@ -176,6 +116,145 @@
         Soro runs on a <a href="https://vuejs.org/" target="_blank" class="anchor" rel="noopener">Vue JS</a> front-end connected via a <a href="https://www.graphile.org/postgraphile/" target="_blank" rel="noopener">PostGraphile</a> GraphQL API server pointed at a PostgreSQL database.
       </p>
     </div>
+    <portal-modal
+      :show="showUserModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showUserModal = false"
+    >
+      <template v-slot:header>
+        Customers landing page
+      </template>
+      <template v-slot:content>
+        <app-img lazy-src="/img/soro/home.jpg"
+                 class="shadow"
+                 alt="Soro User Homepage"
+                 :width="1603"
+                 :height="1066"/>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showUserModal = !showUserModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showCustModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showCustModal = false"
+    >
+      <template v-slot:header>
+        Customers landing page
+      </template>
+      <template v-slot:content>
+        <app-img key="1"
+                 lazy-src="/img/soro/CustomerDashboard2.jpg"
+                 class="shadow"
+                 alt="Customers landing page"
+                 :width="1265"
+                 :height="799"/>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showCustModal = !showCustModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showCustDetModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showCustDetModal = false"
+    >
+      <template v-slot:header>
+        Customer Details
+      </template>
+      <template v-slot:content>
+        <app-img key="3"
+                 lazy-src="/img/soro/CustomerDetail_summary.jpg"
+                 class="shadow"
+                 alt="Customer Details"
+                 :width="1604"
+                 :height="1066"/>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showCustDetModal = !showCustDetModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showMobileModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showMobileModal = false"
+    >
+      <template v-slot:header>
+        Customer Details (Mobile)
+      </template>
+      <template v-slot:content>
+        <app-img key="5"
+                 lazy-src="/img/soro/CD_mobile.jpg"
+                 class="shadow"
+                 alt="Customer Details (Mobile)"
+                 :width="824/2"
+                 :height="1477/2"/>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showMobileModal = !showMobileModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :show="showReportModal"
+      :has-header="true"
+      :has-footer="true"
+      @CLOSE_MODAL="showReportModal = false"
+    >
+      <template v-slot:header>
+        Total Sales by Product report
+      </template>
+      <template v-slot:content>
+        <app-img key="7"
+                 lazy-src="/img/soro/TotalSalesByProducts.jpg"
+                 class="shadow"
+                 alt="Total Sales by Product report"
+                 :width="1604"
+                 :height="1064"/>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showReportModal = !showReportModal"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
   </article>
 </template>
 

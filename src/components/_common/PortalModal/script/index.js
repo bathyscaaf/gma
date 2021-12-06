@@ -10,17 +10,13 @@ export default {
       type: Boolean,
       default: false
     },
-    hasHeader: {
+    hasFooter: {
       type: Boolean,
       default: false
     },
-    modalType: {
-      type: String,
-      default: 'card'
-    },
-    modalStyle: {
-      type: String,
-      default: 'info'
+    hasHeader: {
+      type: Boolean,
+      default: false
     },
     customStyles: {
       type: String,
