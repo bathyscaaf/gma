@@ -1,3 +1,5 @@
+// Component built via this article, with some additions:
+// https://markus.oberlehner.net/blog/lazy-loading-responsive-images-with-vue/
 <script>
   import lozad from 'lozad'
   export default {

@@ -1,26 +1,15 @@
 import AppImg from '@/components/_common/AppImg'
-import CardModal from '@/components/_common/CardModal2/CardModal'
+import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
 export default {
   name: 'WorkSoro',
   components: {
-    CardModal,
+    PortalModal,
     AppImg
   },
   data () {
     return {
-      modalTarget: null,
-      modalActive: false
-    }
-  },
-  methods: {
-    openModal (e) {
-      // console.log('openModal: ', e)
-      this.modalActive = true
-      this.modalTarget = e
-    },
-    closeModal () {
-      // console.log('closeModal')
-      this.modalActive = false
+      showZumiezModal: false,
+      showMsoftModal: false
     }
   }
 }

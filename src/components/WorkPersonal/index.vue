@@ -99,21 +99,6 @@
                 </div>
                 <figcaption>"Radiant Eye" &mdash; made to test Trieste's "scene" feature</figcaption>
               </figure>
-
-              <template v-if="modalTarget === 'radiant'">
-                <card-modal title="Radiant Eye"
-                            :active="modalActive"
-                            @MODAL_CLOSE="closeModal"
-                >
-                  <div class="bg-graphite">
-                    <iframe src="https://player.vimeo.com/video/202598664"
-                            width="640"
-                            height="360"
-                            allow="autoplay; fullscreen" allowfullscreen
-                    />
-                  </div>
-                </card-modal>
-              </template>
               <figure class="mb-8 md:mr-8">
                 <div class="relative">
                   <a role="button"
@@ -131,51 +116,115 @@
                 </div>
                 <figcaption>"Outpost" &mdash; just for fun.  Video and audio.</figcaption>
               </figure>
-
-              <template v-if="modalTarget === 'outpost'">
-                <card-modal title="Customer Details"
-                            :active="modalActive"
-                            @MODAL_CLOSE="closeModal"
-                >
-                  <div class="bg-graphite">
-                    <iframe src="https://player.vimeo.com/video/202594123"
-                            width="640"
-                            height="360"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                    />
-                  </div>
-                </card-modal>
-              </template>
             </div>
           </div>
         </aside>
       </section>
     </div>
+    <!--    Trieste modal    -->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['trieste'].active"
+      @CLOSE_MODAL="closeModal('trieste')"
+    >
+      <template v-slot:header>
+        TRIESTE (under development)
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <div class="bg-black">
+            <iframe src="https://player.vimeo.com/video/392813558"
+                    width="640"
+                    height="360"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+            />
+          </div>
+        </div>
+        <div class="mt-8"
+             style="max-width: 640px;"
+        >
+          The imagery in the background is the actual Trieste output.  The visible node-networks are the actual "code" (though some nodes contain Python scripts).  The video is a real-time view of the application running within the Touchdesigner dev environment.
+          What you are seeing is audio input separated into three frequency bands and used to deform various 3d objects which are then composited over randomly chosen video.
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('trieste')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <!--    Radiant modal    -->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['radiant'].active"
+      @CLOSE_MODAL="closeModal('radiant')"
+    >
+      <template v-slot:header>
+        Radiant Eye
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <div class="bg-black shadow-md">
+            <iframe src="https://player.vimeo.com/video/202598664"
+                    width="640"
+                    height="360"
+                    allow="autoplay; fullscreen" allowfullscreen
+            />
+          </div>
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('radiant')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <!--    Outpost modal    -->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['outpost'].active"
+      @CLOSE_MODAL="closeModal('outpost')"
+    >
+      <template v-slot:header>
+        Outpost
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <div class="bg-black">
+            <iframe src="https://player.vimeo.com/video/202594123"
+                    width="640"
+                    height="360"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+            />
+          </div>
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('outpost')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
   </article>
 </template>
-
-<style>
-  .button-image {
-    outline: none;
-    @apply m-0 p-0 block cursor-pointer
-  }
-  a.button-video .play-button {
-    outline: none;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    /*opacity: .7;*/
-    background: url(/img/playIcon.svg) no-repeat center center/30%;
-  }
-  .button-image:active {
-    outline: none;
-  }
-  .button-image:focus {
-    outline: none;
-  }
-</style>
+<style lang="css" scoped src="./style/_styles.css" />

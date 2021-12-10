@@ -24,8 +24,6 @@ module.exports = {
       extraLight: ['LatoLatinWebLight', 'Helvetica', 'Arial', 'sans-serif'],
       'semi-bold': ['LatoLatinWebSemibold', 'Helvetica', 'Arial', 'sans-serif'],
       heading: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
-      // heading: ['LatoLatinWebHeavy', 'Helvetica', 'Arial', 'sans-serif'],
-      // black: ['LatoLatinWebBlack', 'Helvetica', 'Arial', 'sans-serif']
     },
     minWidth: {
       0: '0',
@@ -137,6 +135,7 @@ module.exports = {
       sky: theme('colors.sky'),
       peach: theme('colors.peach'),
       'peach-65': theme('colors.peach-65'),
+      'peach-dark': theme('colors.peach-dark'),
       'white-75': theme('colors.white-75'),
       transparent: theme('colors.transparent'),
       darker: theme('colors.darker')
@@ -167,6 +166,7 @@ module.exports = {
         khaki: 'hsla(33, 56.9%, 90%, 1)',
         sky: 'hsla(215.3, 57%, 88%, 1)',
         peach: 'hsla(35.3, 57%, 88%, 1)',
+        'peach-dark': 'hsla(35.3, 57%, 70%, 1)',
         'peach-65': 'hsla(35.3, 57%, 88%, 0.65)',
         home: 'hsla(26.7, 8%, 23%, 1)',
         work: 'hsla(198.1, 27%, 39%, 1)',

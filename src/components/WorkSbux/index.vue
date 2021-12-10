@@ -12,7 +12,7 @@
       <section class="flex flex-wrap md:flex-no-wrap md:mr-8" v-observe-visibility="visibilityChanged">
         <div class="md:w-1/2 mb-8">
           <header>
-            <h3 class="text-xl font-semi-bold text-outline-dark">STARBUCKS.COM<span class="ml-2 text-peach">&amp; RELATED MICROSITES</span></h3>
+            <h3 class="text-2xl font-semi-bold text-outline-dark">STARBUCKS.COM<span class="ml-2 text-peach">&amp; RELATED MICROSITES</span></h3>
           </header>
           <p>
             During my 6 years at Starbucks our website grew from a few promotional pages to a fully responsive,
@@ -32,7 +32,8 @@
                 <a class="button-image"
                    role="button"
                    title="Starbucks Homepage (2015) modal button"
-                   @click.prevent="showHomeModal = true">
+                   @click.prevent="openModal('sbux-home')"
+                >
                   <app-img lazy-src="/img/sbux/sbux_homepage@0.5x.png"
                            class="mb-8 shadow portrait-sm:mr-8 landscape-sm:mr-8"
                            alt="Starbucks Homepage (2015)"
@@ -44,7 +45,8 @@
                 <a class="button-image"
                    role="button"
                    title="Mobile page with media player modal button"
-                   @click.prevent="showHouseModal = true">
+                   @click.prevent="openModal('sbux-house')"
+                >
                   <app-img lazy-src="/img/sbux/sbux_ch_mbx2@0.25x.png"
                            class="mb-8 shadow mr-8 md:ml-0 md:mr-0"
                            alt="Mobile page with media player"
@@ -57,7 +59,8 @@
               <a class="button-image"
                  role="button"
                  title="How to Brew modal button"
-                 @click.prevent="showBrewModal = true">
+                 @click.prevent="openModal('sbux-brew')"
+              >
                 <app-img lazy-src="/img/sbux/sbux_htb@0.5x.png"
                          class="shadow md:ml-0"
                          alt="How to Brew"
@@ -72,7 +75,7 @@
       </section>
       <section>
         <header class="my-12">
-          <h3 class="text-xl font-semi-bold text-outline-dark">STARBUCKS RETI<span class="text-peach ml-4">INSTALLATIONS, KIOSKS</span></h3>
+          <h3 class="text-2xl font-semi-bold text-outline-dark">STARBUCKS RETI<span class="text-peach ml-4">INSTALLATIONS, KIOSKS</span></h3>
           <span>
             Research into Emerging Technologies team &mdash; I worked with the Starbucks RETI team conceptualizing, prototyping, and executing innovative in-store experiences.
             <br>Some of these projects, such as those below, made it into retail stores, while others remained conceptual prototypes
@@ -91,7 +94,7 @@
             </p>
             <p class="mt-4">
               I was intimately involved in the conceptual phase, including the idea itself, building prototypes
-              (using Touchdesigner), and creating concept videos exploring the look and feel of potential
+              (using TouchDesigner), and creating concept videos exploring the look and feel of potential
               features.
             </p>
             <p class="mt-4 mb-8 md:mb-0">
@@ -106,12 +109,13 @@
                 <a role="button"
                    class="button-image button-video shadow mb-8"
                    title="Magic Chalkboard Disneyland Video modal button"
-                   @click.prevent="showMagicVideo = true">
+                   @click.prevent="openModal('sbux-chalkboard-video')"
+                >
                   <app-img lazy-src="/img/sbux/MagicChalkboard_Wide_x2@0.5x.png"
                            alt="Magic Chalkboard (video)"
                            :width="358"
                            :height="202"/>
-                  <div class="play-button"></div>
+                  <div class="play-button" />
                 </a>
               </div>
 
@@ -120,7 +124,8 @@
               <a role="button"
                  class="button-image shadow landscape-sm:ml-8 md:ml-8"
                  title="Magic Chalkboard Disneyland image modal button"
-                 @click.prevent="showMagicPicture = true">
+                 @click.prevent="openModal('sbux-chalkboard-image')"
+              >
                 <app-img lazy-src="/img/sbux/MagicChalkboard1_x2@0.25x.png"
                          alt="Magic Chalkboard"
                          :height="238"
@@ -131,7 +136,7 @@
         </div>
 
         <div class="flex flex-wrap md:flex-no-wrap mt-12 mb-2">
-          <div class="md:w-1/2">
+          <div class="md:w-1/3">
             <h4 class="text-xl font-semi-bold text-outline-dark">Coffee Passion Wall<span class="ml-4 text-peach">RETI</span></h4>
             <p class="mt-2">
               A six screen matrix on display in the Disneyland and Disneyworld Starbucks stores. The video plays
@@ -154,8 +159,9 @@
                 <div class="relative">
                   <a role="button"
                      class="button-image button-video shadow mb-8 md:mb-0 landscape-sm:mr-8 portrait-sm:mr-8"
-                     title="Magic Chalkboard Disneyland modal button"
-                     @click.prevent="openModal('cpwVid')">
+                     title="Coffee Passion Wall (video) modal button"
+                     @click.prevent="openModal('sbux-passion-video')"
+                  >
                     <app-img lazy-src="/img/sbux/btc_poster.jpg"
                              alt="CPW Video"
                              :width="640/1.85"
@@ -168,10 +174,11 @@
                 <div class="mb-8">
                   <a role="button"
                      class="button-image shadow"
-                     title="Coffee Passion Wall scale reference modal button"
-                     @click.prevent="openModal('cpw1')">
+                     title="Coffee Passion Wall (image) modal button"
+                     @click.prevent="openModal('sbux-passion-image-one')"
+                  >
                     <app-img lazy-src="/img/sbux/CoffeePassionWall1_x2@0.5x.png"
-                             alt="Magic Chalkboard in use"
+                             alt="Coffee Passion Wall (image)"
                              :width="234"
                              :height="214"/>
                   </a>
@@ -180,23 +187,26 @@
                   <a role="button"
                      class="button-image"
                      title="Coffee Passion Wall perspective modal button"
-                     @click.prevent="openModal('cpw2')">
+                     @click.prevent="openModal('sbux-passion-image-two')"
+                  >
                     <app-img lazy-src="/img/sbux/CoffeePassionWall2_x2@0.5x.png"
                              alt="Coffee Passion Wall perspective"
                              class="shadow"
                              :width="204"
-                             :height="150"/>
+                             :height="150"
+                    />
                   </a>
                 </div>
               </div>
             </div>
           </aside>
         </div>
-
         <div class="mt-12 mb-2 flex">
           <div>
             <div>
-              <h4 class="text-xl font-semi-bold text-outline-dark">Additional RETI Projects</h4>
+              <h4 class="text-xl font-semi-bold text-outline-dark">
+                Additional RETI Projects
+              </h4>
               <p class="mt-2 mb-4">
                 Some additional examples.  Details within the modal windows.
               </p>
@@ -207,21 +217,25 @@
                   <a role="button"
                      class="button-image shadow"
                      title="Evolution Fresh modal button"
-                     @click.prevent="openModal('evolution')">
+                     @click.prevent="openModal('sbux-evolution')"
+                  >
                     <app-img lazy-src="/img/sbux/EvolutionFresh.jpg"
                              alt="Evolution Fresh"
                              :width="234"
                              :height="214"/>
                   </a>
+                  <figcaption>
+                    Evolution Fresh
+                  </figcaption>
                 </figure>
-                <figcaption>Evolution Fresh</figcaption>
               </div>
               <div class="md:ml-8">
                 <figure class="portrait-sm:mb-8">
                   <a role="button"
                      class="button-image shadow"
                      title="MIDAS modal button"
-                     @click.prevent="openModal('midas')">
+                     @click.prevent="openModal('sbux-midas-image')"
+                  >
                     <app-img lazy-src="/img/sbux/midas@0.25x.jpg"
                              alt="MIDAS"
                              :width="208"
@@ -235,12 +249,14 @@
                   <a role="button"
                      class="button-image button-video shadow"
                      title="Magic Chalkboard Disneyland modal button"
-                     @click.prevent="openModal('midasVid')">
+                     @click.prevent="openModal('sbux-midas-video')">
                     <app-img lazy-src="/img/sbux/midas_selected@0.5x.jpg"
                              alt="CPW Video"
                              :width="259"
                              :height="162"/>
-                    <div class="play-button"></div>
+                    <div
+                      class="play-button"
+                    />
                   </a>
                   <figcaption>Midas in action</figcaption>
                 </figure>
@@ -249,14 +265,13 @@
           </div>
 
         </div>
-
       </section>
     </div>
     <portal-modal
-      :show="showHomeModal"
       :has-header="true"
       :has-footer="true"
-      @CLOSE_MODAL="showHomeModal = false"
+      :show="modalList['sbux-home'].active"
+      @CLOSE_MODAL="closeModal('sbux-home')"
     >
       <template v-slot:header>
         Starbucks Homepage (2015)
@@ -271,7 +286,7 @@
       <template v-slot:footer>
         <div class="footer-row flex justify-end">
           <button
-            @click="showHomeModal = false"
+            @click="closeModal('sbux-home')"
             class="button bg-paprika text-white"
           >
             Close
@@ -280,10 +295,10 @@
       </template>
     </portal-modal>
     <portal-modal
-      :show="showHouseModal"
       :has-header="true"
       :has-footer="true"
-      @CLOSE_MODAL="showHouseModal = false"
+      :show="modalList['sbux-house'].active"
+      @CLOSE_MODAL="closeModal('sbux-house')"
     >
       <template v-slot:header>
         Mobile page with media player
@@ -301,7 +316,7 @@
       <template v-slot:footer>
         <div class="footer-row flex justify-end">
           <button
-            @click="showHouseModal = false"
+            @click="closeModal('sbux-house')"
             class="button bg-paprika text-white"
           >
             Close
@@ -310,10 +325,10 @@
       </template>
     </portal-modal>
     <portal-modal
-      :show="showBrewModal"
       :has-header="true"
       :has-footer="true"
-      @CLOSE_MODAL="showBrewModal = false"
+      :show="modalList['sbux-brew'].active"
+      @CLOSE_MODAL="closeModal('sbux-brew')"
     >
       <template v-slot:header>
         How to Brew
@@ -331,7 +346,7 @@
       <template v-slot:footer>
         <div class="footer-row flex justify-end">
           <button
-            @click="showBrewModal = false"
+            @click="closeModal('sbux-brew')"
             class="button bg-paprika text-white"
           >
             Close
@@ -340,10 +355,10 @@
       </template>
     </portal-modal>
     <portal-modal
-      :show="showMagicVideo"
       :has-header="true"
       :has-footer="true"
-      @CLOSE_MODAL="showMagicVideo = false"
+      :show="modalList['sbux-chalkboard-video'].active"
+      @CLOSE_MODAL="closeModal('sbux-chalkboard-video')"
     >
       <template v-slot:header>
         Magic Chalkboard (video)
@@ -352,6 +367,7 @@
         <div class="w-full flex align-center justify-center">
           <video
             src="/video/magic_chalkboard_baseline.mp4"
+            :key="'sbux-chalkboard-video' + modalList['sbux-chalkboard-video'].key"
             controls
             mute
             autoplay
@@ -361,7 +377,7 @@
       <template v-slot:footer>
         <div class="footer-row flex justify-end">
           <button
-            @click="showMagicVideo = false"
+            @click="closeModal('sbux-chalkboard-video')"
             class="button bg-paprika text-white"
           >
             Close
@@ -370,10 +386,10 @@
       </template>
     </portal-modal>
     <portal-modal
-      :show="showMagicPicture"
       :has-header="true"
       :has-footer="true"
-      @CLOSE_MODAL="showMagicPicture = false"
+      :show="modalList['sbux-chalkboard-image'].active"
+      @CLOSE_MODAL="closeModal('sbux-chalkboard-image')"
     >
       <template v-slot:header>
         Magic Chalkboard
@@ -391,7 +407,7 @@
       <template v-slot:footer>
         <div class="footer-row flex justify-end">
           <button
-            @click="showMagicPicture = false"
+            @click="closeModal('sbux-chalkboard-image')"
             class="button bg-paprika text-white"
           >
             Close
@@ -399,121 +415,228 @@
         </div>
       </template>
     </portal-modal>
-
-    <template v-if="modalTarget === 'cpwVid'">
-      <card-modal title="Coffee Passion Wall" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <div class="bg-black">
-          <video src="/video/CoffeePassionEdit_baseline2.mp4" controls mute autoplay />
+    <!--    Coffee Passion Wall Video-->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-passion-video'].active"
+      @CLOSE_MODAL="closeModal('sbux-passion-video')"
+    >
+      <template v-slot:header>
+        Coffee Passion Wall (video)
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <div class="bg-black">
+            <video
+              class="shadow-md"
+              :key="'sbux-passion-video' + modalList['sbux-passion-video'].key"
+              src="/video/CoffeePassionEdit_baseline2.mp4"
+              controls
+              mute
+              autoplay
+            />
+          </div>
         </div>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'cpw1'">
-      <card-modal title="Coffee Passion Wall" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <app-img lazy-src="/img/sbux/CoffeePassionWall1_x2.png"
-                 class="shadow"
-                 alt="Coffee Passion Wall scale reference"
-                 :width="466"
-                 :height="428"/>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'cpw2'">
-      <card-modal title="Coffee Passion Wall" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <app-img lazy-src="/img/sbux/CoffeePassionWall2_x2.png"
-                 class="shadow"
-                 alt="Coffee Passion Wall perspective"
-                 :width="405"
-                 :height="297"/>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'evolution'">
-      <card-modal title="Evoution Fresh" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-passion-video')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <!--    Coffee Passion Wall Image 1-->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-passion-image-one'].active"
+      @CLOSE_MODAL="closeModal('sbux-passion-image-one')"
+    >
+      <template v-slot:header>
+        Coffee Passion Wall
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <app-img lazy-src="/img/sbux/CoffeePassionWall1_x2.png"
+                   class="shadow"
+                   alt="Coffee Passion Wall scale reference"
+                   :width="466"
+                   :height="428"
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-passion-image-one')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <!--    Coffee Passion Wall Image 2-->
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-passion-image-two'].active"
+      @CLOSE_MODAL="closeModal('sbux-passion-image-two')"
+    >
+      <template v-slot:header>
+        Coffee Passion Wall
+      </template>
+      <template v-slot:content>
+        <div class="w-full flex align-center justify-center">
+          <app-img lazy-src="/img/sbux/CoffeePassionWall2_x2.png"
+                   class="shadow"
+                   alt="Coffee Passion Wall perspective"
+                   :width="405"
+                   :height="297"
+          />
+        </div>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-passion-image-two')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-evolution'].active"
+      @CLOSE_MODAL="closeModal('sbux-evolution')"
+    >
+      <template v-slot:header>
+        Evolution Fresh
+      </template>
+      <template v-slot:content>
+        <aside>
           <app-img lazy-src="/img/sbux/EvolutionFresh_x2.jpg"
                    class="shadow"
-                   alt="Evoution Fresh"
+                   alt="Evolution Fresh"
                    :width="573"
-                   :height="332"/>
-          <div class="">
-            <h4 class="mt-4">EVOLUTION FRESH</h4>
-            <h5>"Video Wall"</h5>
-            <p>
-              Displays promotional and nutritional information, as well as the store menu.
-              <br>Each spigot is connected to a sensor and Arduino microcontroller board<br>Each spigot combination triggers different video and effects.
-            </p>
-            <p class="mt-4">
-              I was mostly involved in developing the concept,<br>determined the ideal video compression for our custom OpenFrameworks/GStreamer video playback,<br>and created video content.
-            </p>
+                   :height="332"
+          />
+          <div class="mb-4">
+            <span class="text-2xl font-semibold">Evolution Fresh</span>
+            <br>
+            <span class="font-semibold">Interactive video wall</span>
           </div>
+          <p>
+            The wall displays promotional and nutritional information, as well as the store menu.
+            <br>
+            Each spigot is connected to a pressure sensor and Arduino microcontroller board.
+            <br>
+            Pulling a spigot (or combination of spigots) triggers different combinations of video and effects.
+          </p>
+          <p class="mt-4">
+            I worked on concept development, determined the ideal video compression for our custom OpenFrameworks/GStreamer video playback application, and created video content.
+          </p>
+        </aside>
 
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-evolution')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
         </div>
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'midas'">
-      <card-modal title="Midas Kiosk" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <div class="bg-darker flex justify-center rounded">
-          <app-img lazy-src="/img/sbux/midas.jpg"
-                   class="shadow"
-                   alt="Midas"
-                   :width="827"
-                   :height="517"/>
-        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-midas-image'].active"
+      @CLOSE_MODAL="closeModal('sbux-midas-image')"
+    >
+      <template v-slot:header>
+        Midas: Coffee Explorer Kiosk
+      </template>
+      <template v-slot:content>
+        <app-img lazy-src="/img/sbux/midas.jpg"
+                 class="shadow"
+                 alt="Midas"
+                 :width="827"
+                 :height="517"
+        />
         <p class="mt-4">
-          Built as a tool to help customers pick a packaged coffee that suits their tastes.<br>
-          Stamp icons &mdash; representing the packaged coffees &mdash; flow onto the screen above a filter section.
-          <br>
-          The filters, used in combination, change the stamps displayed.
+          Midas is a touchscreen application that helps customers pick a packaged coffee that suits their tastes.<br>
+          Stamp icons &mdash; representing the packaged coffees &mdash; flow onto the screen above a filter section.  The filters, used in combination, change the stamps displayed.
         </p>
         <p class="mt-4">
-          Once chosen a stamp animates to display the coffee description, tasting combinations, region map, picture gallery, and related coffees.
+          Once a stamp is selected it animates to display the coffee description, tasting combinations, region map, a picture gallery, and related coffees.
         </p>
-
-      </card-modal>
-    </template>
-
-    <template v-if="modalTarget === 'midasVid'">
-      <card-modal title="Midas Kiosk" :active="modalActive" @MODAL_CLOSE="closeModal">
-        <div>
-          <div class="bg-darker flex justify-center">
-            <video src="/video/midas.mp4" controls mute poster="/img/sbux/midas_selected.jpg" class="outline-none bg-black"/>
-          </div>
-          <p class="mt-4">
-            Midas in action: this was filmed on my workstation, which is not a touchscreen.
-            <br>
-            If you look at the bottom of the video you can see me control the application via another touchscreen
-          </p>
-          <p class="mt-4">
-            Built as a tool to help customers pick a packaged coffee that suits their tastes.<br>
-            Stamp icons &mdash; representing the packaged coffees &mdash; flow onto the screen above a filter section.
-            <br>
-            The filters, used in combination, change the stamps displayed.
-          </p>
-          <p class="mt-4">
-            Once chosen a stamp animates to display the coffee description, tasting combinations, region map, picture gallery, and related coffees.
-          </p>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-midas-image')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
         </div>
-      </card-modal>
-    </template>
-
+      </template>
+    </portal-modal>
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="modalList['sbux-midas-video'].active"
+      @CLOSE_MODAL="closeModal('sbux-midas-video')"
+    >
+      <template v-slot:header>
+        Midas: Coffee Explorer Kiosk (video)
+      </template>
+      <template v-slot:content>
+        <div class="bg-darker inline-flex justify-center">
+          <video
+            :key="'sbux-midas-video' + modalList['sbux-midas-video'].key"
+            src="/video/midas.mp4"
+            controls
+            mute
+            poster="/img/sbux/midas_selected.jpg"
+            class="outline-none bg-black"
+          />
+        </div>
+        <p class="mt-4">
+          Midas in action: this was filmed on my workstation, which is not a touchscreen.<br>
+          (If you look at the bottom of the video you can see me control the application via another touchscreen)
+        </p>
+        <p class="mt-4">
+          Midas is a touchscreen application that helps customers pick a packaged coffee that suits their tastes.<br>
+          Stamp icons &mdash; representing the packaged coffees &mdash; flow onto the screen above a filter section.  The filters, used in combination, change the stamps displayed.
+        </p>
+        <p class="mt-4">
+          Once a stamp is selected it animates to display the coffee description, tasting combinations, region map, a picture gallery, and related coffees.
+        </p>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="closeModal('sbux-midas-video')"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
   </article>
 </template>
 
-<style>
-  @import "./style/_styles.css";
-  .ss-pic {
-    width: 30rem;
-  }
-  .soro-logo {
-    max-width: 15rem;
-  }
-  .ss-preload {
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    left: -200px;
-  }
-</style>
+<style lang="css" scoped src="./style/_styles.css" />

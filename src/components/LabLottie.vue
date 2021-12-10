@@ -79,6 +79,7 @@
   .lab-container {
     display: inline-block;
     margin-bottom: -1px;
+    margin-left: 2rem;
     padding: 0;
   }
   .lab {

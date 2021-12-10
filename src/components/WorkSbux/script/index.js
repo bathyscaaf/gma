@@ -1,77 +1,74 @@
 import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
 import AppImg from '@/components/_common/AppImg'
-import CardModal from '@/components/_common/CardModal2/CardModal'
 export default {
   name: 'WorkSbux',
   components: {
     PortalModal,
-    CardModal,
     AppImg
   },
   data () {
     return {
-      showHomeModal: false,
-      showBrewModal: false,
-      showHouseModal: false,
-      showMagicVideo: false,
-      showMagicPicture: false,
-      modalTarget: null,
-      modalActive: false,
-      imgList: [
-        {
-          index: 0,
-          title: 'Starbucks Homepage (2015)',
-          thumb: '/img/sbux/sbux_homepage@0.5x.png',
-          src: '/img/sbux/sbux_homepage.png',
-          style: null,
-          width: '234px',
-          height: '222px'
+      preloadImages: false,
+      modalList: {
+        'sbux-home': {
+          active: false,
+          key: 0
         },
-        {
-          index: 1,
-          title: 'Mobile page with media player',
-          thumb: '/img/sbux/sbux_ch_mbx2@0.25x.png',
-          src: '/img/sbux/sbux_ch_mbx2.png',
-          style: null,
-          width: '116px',
-          height: '113px'
+        'sbux-brew': {
+          active: false,
+          key: 0
         },
-        {
-          index: 2,
-          title: 'How to Brew page',
-          thumb: '/img/sbux/sbux_htb@0.5x.png',
-          src: '/img/sbux/sbux_htb.png',
-          style: null,
-          width: '228px',
-          height: '416px'
+        'sbux-house': {
+          active: false,
+          key: 0
+        },
+        'sbux-chalkboard-video': {
+          active: false,
+          key: 0
+        },
+        'sbux-chalkboard-image': {
+          active: false,
+          key: 0
+        },
+        'sbux-passion-video': {
+          active: false,
+          key: 0
+        },
+        'sbux-passion-image-one': {
+          active: false,
+          key: 0
+        },
+        'sbux-passion-image-two': {
+          active: false,
+          key: 0
+        },
+        'sbux-evolution': {
+          active: false,
+          key: 0
+        },
+        'sbux-midas-video': {
+          active: false,
+          key: 0
+        },
+        'sbux-midas-image': {
+          active: false,
+          key: 0
         }
-      ],
-      preloadImages: false
-    }
-  },
-  computed: {
-    modalTitle () {
-      return this.modalIndex !== null ? this.slideList[this.modalIndex].title : null
+      }
     }
   },
   methods: {
     openModal (e) {
       console.log('openModal: ', e)
-      this.modalActive = true
-      this.modalTarget = e
+      this.modalList[e].active = true
     },
-    closeModal () {
-      console.log('closeModal')
-      this.modalActive = false
+    closeModal (e) {
+      console.log('closeModal', e)
+      this.modalList[e].active = false
+      this.modalList[e].key++
     },
     visibilityChanged (e) {
-      if (e) {
-        console.log('sbux visible')
-        this.preloadImages = true
-      } else {
-        console.log('sbux not visible')
-        this.preloadImages = false
-      }
+      this.preloadImages = e
     }
   }
 }

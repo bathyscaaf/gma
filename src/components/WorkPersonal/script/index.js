@@ -1,8 +1,11 @@
 import AppImg from '@/components/_common/AppImg'
 import CardModal from '@/components/_common/CardModal2/CardModal'
+import PortalModal from '@/components/_common/PortalModal/PortalModal.vue'
+
 export default {
   name: 'WorkSbux',
   components: {
+    PortalModal,
     CardModal,
     AppImg
   },
@@ -10,61 +13,37 @@ export default {
     return {
       modalTarget: null,
       modalActive: false,
-      imgList: [
-        {
-          index: 0,
-          title: 'Starbucks Homepage (2015)',
-          thumb: '/img/sbux/sbux_homepage@0.5x.png',
-          src: '/img/sbux/sbux_homepage.png',
-          style: null,
-          width: '234px',
-          height: '222px'
+      preloadImages: false,
+      // use list of modals so key can be incremented
+      // to reset video component and prevent unnecessary loading
+      modalList: {
+        trieste: {
+          active: false,
+          key: 0
         },
-        {
-          index: 1,
-          title: 'Mobile page with media player',
-          thumb: '/img/sbux/sbux_ch_mbx2@0.25x.png',
-          src: '/img/sbux/sbux_ch_mbx2.png',
-          style: null,
-          width: '116px',
-          height: '113px'
+        radiant: {
+          active: false,
+          key: 0
         },
-        {
-          index: 2,
-          title: 'How to Brew page',
-          thumb: '/img/sbux/sbux_htb@0.5x.png',
-          src: '/img/sbux/sbux_htb.png',
-          style: null,
-          width: '228px',
-          height: '416px'
+        outpost: {
+          active: false,
+          key: 0
         }
-      ],
-      preloadImages: false
-    }
-  },
-  computed: {
-    modalTitle () {
-      return this.modalIndex !== null ? this.slideList[this.modalIndex].title : null
+      }
     }
   },
   methods: {
     openModal (e) {
       console.log('openModal: ', e)
-      this.modalActive = true
-      this.modalTarget = e
+      this.modalList[e].active = true
     },
-    closeModal () {
-      console.log('closeModal')
-      this.modalActive = false
+    closeModal (e) {
+      console.log('closeModal', e)
+      this.modalList[e].active = false
+      this.modalList[e].key++
     },
     visibilityChanged (e) {
-      if (e) {
-        console.log('sbux visible')
-        this.preloadImages = true
-      } else {
-        console.log('sbux not visible')
-        this.preloadImages = false
-      }
+      this.preloadImages = e
     }
   }
 }

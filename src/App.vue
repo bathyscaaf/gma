@@ -71,12 +71,11 @@
 </script>
 
 <template>
-  <main id="app"
-        class="mooooooo"
-  >
+  <main id="app">
     <monster-scape id="marquee-section" :paused="monsterPaused" />
     <about-section id="about-section" @MODAL_OPEN="openModal" />
     <lab-lottie
+      class="lab-lottie"
       aria-hidden="true"
     />
     <work-section id="work-section" @MODAL_OPEN="openModal" />

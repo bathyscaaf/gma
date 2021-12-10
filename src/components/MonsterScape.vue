@@ -395,6 +395,9 @@
   #title-svg {
     max-width: 30%;
   }
+  .city-svg {
+    margin-bottom: -1px;
+  }
   .monster-scape {
     width: 100vw;
     overflow: hidden;

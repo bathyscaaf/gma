@@ -26,9 +26,9 @@
         >
           <header
             v-if="hasHeader"
-            class="modal-header rounded-t-lg bg-peach pl-12 pr-4 py-4 flex justify-between"
+            class="modal-header"
           >
-            <div class="modal-title font-semibold text-xl">
+            <div class="modal-title">
               <slot
                 name="header"
               >
@@ -57,7 +57,7 @@
           </header>
           <div
             ref="modalBody"
-            class="modal-body overflow-y-auto max-h-70vh overflow-hidden px-12 py-6 bg-white"
+            class="modal-body"
           >
             <slot
               name="content"
@@ -67,7 +67,7 @@
           </div>
           <footer
             v-if="hasFooter"
-            class="modal-footer rounded-b-lg bg-peach pl-12 pr-4 py-4 font-semibold text-xl"
+            class="modal-footer"
           >
             <slot
               name="footer"

@@ -8,18 +8,28 @@
 .modal-container {
     transition: all .3s ease;
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5));
+    scrollbar-color: theme('colors.battleship') theme('colors.peach');
 }
 .modal-header {
-    @apply rounded-t-lg;
+    @apply rounded-t-lg flex justify-between border-b border-gray-400;
+}
+.modal-title {
+    @apply font-semibold text-xl text-white;
 }
 .modal-footer {
-    @apply rounded-b-lg;
+    @apply rounded-b-lg font-semibold text-xl border-t border-gray-400;
+}
+.modal-header, .modal-footer {
+    @apply bg-contact pl-12 pr-4 py-4;
 }
 .modal-container.no-header {
     @apply rounded-t-lg;
 }
 .modal-container.no-footer {
     @apply rounded-b-lg;
+}
+.modal-body {
+    @apply overflow-y-auto max-h-80vh overflow-hidden px-12 py-6 bg-peach;
 }
 .close-btn {
     @apply cursor-pointer;

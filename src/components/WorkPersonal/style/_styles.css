@@ -1,0 +1,21 @@
+.button-image {
+    outline: none;
+    @apply m-0 p-0 block cursor-pointer
+}
+a.button-video .play-button {
+    outline: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background: url(/img/playIcon.svg) no-repeat center center/30%;
+}
+.button-image:active {
+    outline: none;
+}
+.button-image:focus {
+    outline: none;
+}

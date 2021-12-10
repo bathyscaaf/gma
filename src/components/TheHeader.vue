@@ -20,17 +20,19 @@
       <button @click="onNavClick('#work-section')" class="nav-button bg-work w-1/4 md:w-auto">Work</button>
       <button @click="onNavClick('#contact-section')" class="nav-button bg-contact w-1/4 md:w-auto">Contact</button>
     </nav>
-    <div class="pd-12 hidden md:inline-block nav-button">
-      <a href="mailto:glenn@gianmonsterattack.com?subject=contact%20from%20giantmonsterattack" class="text-azul">
-        glenn@giantmonsterattack.com
-      </a>
-    </div>
+    <!--    <div class="pd-12 hidden md:inline-block nav-button">-->
+    <!--      <a href="mailto:glenn@gianmonsterattack.com?subject=contact%20from%20giantmonsterattack" class="text-azul">-->
+    <!--        glenn@giantmonsterattack.com-->
+    <!--      </a>-->
+    <!--    </div>-->
   </header>
 </template>
 
 <style>
   .header-site {
     transition: all 0.5s ease;
+    //overflow-y: scroll;
+    //scrollbar-color: transparent transparent;
   }
   .nav-button {
     @apply inline-block text-white font-semi-bold py-2 px-4 h-full outline-none;

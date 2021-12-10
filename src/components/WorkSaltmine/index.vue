@@ -14,13 +14,13 @@
     </header>
     <div class="flex">
       <div class="md:w-1/2 py-2">
-        At Saltmine, a now defunct production house, I worked on projects for clients such as Intel, Microsoft, Zumiez, Corbis, Weidan &amp; Kennedy, and more.
+        At Saltmine, a now defunct digital agency, I worked on projects for clients such as Intel, Microsoft, Zumiez, Corbis, Weidan &amp; Kennedy, and more.
       </div>
       <aside class="flex flex-wrap md:ml-8">
         <figure class="mb-8 md:mr-8">
           <a role="button"
              title="Zumiez BYOC modal button"
-             @click.prevent="openModal('zumiez')">
+             @click.prevent="showZumiezModal = true">
             <app-img lazy-src="/img/saltmine/zumiez_x2@0.5x.jpg"
                      alt="Zumiez BYOC"
                      class="button-image shadow"
@@ -30,23 +30,10 @@
           </a>
           <figcaption>Zumiez BYOC</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'zumiez'">
-          <card-modal title="Zumiez BYOC" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div>
-              <app-img lazy-src="/img/saltmine/zumiez_x2.jpg"
-                       class="shadow"
-                       alt="Zumiez BYOC"
-                       :width="486"
-                       :height="323"/>
-            </div>
-          </card-modal>
-        </template>
-
         <figure class="mb-8 md:mr-8">
           <a role="button"
              title="Microsoft WPC kiosk modal button"
-             @click.prevent="openModal('ms_wpc')">
+             @click.prevent="showMsoftModal = true">
             <app-img key="0"
                      lazy-src="/img/saltmine/Microsoft_WPC_x2@0.5x.jpg"
                      alt="Microsoft WPC kiosk"
@@ -56,51 +43,80 @@
           </a>
           <figcaption>MS WPC kiosk</figcaption>
         </figure>
-
-        <template v-if="modalTarget === 'ms_wpc'">
-          <card-modal title="Microsoft WPC kiosk" :active="modalActive" @MODAL_CLOSE="closeModal">
-            <div>
-              <app-img key="1"
-                       lazy-src="/img/saltmine/Microsoft_WPC_x2.jpg"
-                       class="shadow"
-                       alt="Microsoft WPC kiosk"
-                       :width="574"
-                       :height="430"/>
-            </div>
-          </card-modal>
-        </template>
       </aside>
     </div>
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="showZumiezModal"
+      @CLOSE_MODAL="showZumiezModal = false"
+    >
+      <template v-slot:header>
+        Zumiez BYOC
+      </template>
+      <template v-slot:content>
+        <div class="bg-darker inline-flex justify-center">
+          <app-img lazy-src="/img/saltmine/zumiez_x2.jpg"
+                   class="shadow"
+                   alt="Zumiez BYOC"
+                   :width="486"
+                   :height="323"
+          />
+        </div>
+        <p class="mt-4">
+          An animated skateboard package builder on Zumiez.com.  Built using Flash, inventory data ingested via REST endpoint.
+        </p>
+        <p class="mt-4">
+          I also implemented their website redesign, but the screenshots are lost in time.
+        </p>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showZumiezModal = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
+    <portal-modal
+      :has-header="true"
+      :has-footer="true"
+      :show="showMsoftModal"
+      @CLOSE_MODAL="showMsoftModal = false"
+    >
+      <template v-slot:header>
+        Microsoft WPC kiosk
+      </template>
+      <template v-slot:content>
+        <div
+          class="bg-darker inline-flex justify-center"
+        >
+          <app-img key="1"
+                   lazy-src="/img/saltmine/Microsoft_WPC_x2.jpg"
+                   class="shadow"
+                   alt="Microsoft WPC kiosk"
+                   :width="574"
+                   :height="430"
+          />
+        </div>
+        <p class="mt-4 summit-text">
+          An interactive Flash quiz embedded into a C# application/kiosk on the floor of Microsoft's Worldwide Partner Conference.
+        </p>
+      </template>
+      <template v-slot:footer>
+        <div class="footer-row flex justify-end">
+          <button
+            @click="showMsoftModal = false"
+            class="button bg-paprika text-white"
+          >
+            Close
+          </button>
+        </div>
+      </template>
+    </portal-modal>
   </article>
 </template>
-
-<style>
-  @import "./style/_styles.css";
-  .ss-pic {
-    width: 30rem;
-  }
-  .soro-ss {
-    /*border: 1px solid red;*/
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 28rem;
-    /*background: lightsalmon;*/
-  }
-  .soro-ss:not(:last-child) {
-    /*margin-right: 100px;*/
-  }
-  .soro-logo {
-    max-width: 15rem;
-  }
-  .ss-preload {
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    left: -200px;
-  }
-  figure {
-    /*background: red;*/
-  }
-</style>
+<style lang="css" scoped src="./style/_styles.css" />

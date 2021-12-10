@@ -22,6 +22,9 @@ only screen and (                min-resolution: 2dppx) {
 
 }
 
+html {
+    scrollbar-color: theme('colors.battleship') theme('colors.peach');
+}
 /* -------------  elements -------------------- */
 .button {
     min-width: 10rem;
