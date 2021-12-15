@@ -1,18 +1,14 @@
 import EmailForm from '@/components/EmailForm'
+import AppImg from '@/components/_common/AppImg'
 export default {
   name: 'ContactSection',
   components: {
-    EmailForm
+    EmailForm,
+    AppImg
   },
   data () {
     return {
-      email: null,
-      message: null
-    }
-  },
-  methods: {
-    openModal () {
-      this.$emit('MODAL_OPEN')
+      notRobot: false
     }
   }
 }

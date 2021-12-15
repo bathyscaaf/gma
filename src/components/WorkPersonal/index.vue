@@ -11,9 +11,7 @@
       </h2>
     </header>
     <div class="md:mr-8 mt-12 overflow-hidden">
-      <section class="flex flex-wrap md:flex-no-wrap md:mr-8"
-               v-observe-visibility="visibilityChanged"
-      >
+      <section class="flex flex-wrap md:flex-no-wrap md:mr-8">
         <div class="md:w-1/2 mb-8">
           <header>
             <h3 class="text-xl font-semi-bold text-outline-dark">
@@ -41,6 +39,7 @@
               <figure class="mb-8 md:mr-8">
                 <div class="relative">
                   <a role="button"
+                     v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'trieste')"
                      title="Trieste modal button"
                      class="button-image button-video shadow"
                      @click.prevent="openModal('trieste')"
@@ -58,32 +57,10 @@
                   Trieste (under development)
                 </figcaption>
               </figure>
-
-              <template v-if="modalTarget === 'trieste'">
-                <card-modal title="TRIESTE (under development)"
-                            :active="modalActive"
-                            @MODAL_CLOSE="closeModal"
-                >
-                  <div class="bg-graphite">
-                    <iframe src="https://player.vimeo.com/video/392813558"
-                            width="640"
-                            height="360"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                    />
-                  </div>
-                  <div class="mt-8"
-                       style="max-width: 640px;"
-                  >
-                    The imagery in the background is the actual Trieste output.  The visible node networks are the actual "code".  This is all real-time, within the Touchdesigner dev environment.
-                    What you are seeing is audio input separated into three frequency bands and used to deform various 3d objects which are then composited over randomly chosen video.
-                  </div>
-                </card-modal>
-              </template>
-
               <figure class="mb-8 md:mr-8">
                 <div class="relative">
                   <a role="button"
+                     v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'radiant')"
                      title="Radiant Eye modal button"
                      class="button-image button-video flex items-center justify-center"
                      @click.prevent="openModal('radiant')">
@@ -102,6 +79,7 @@
               <figure class="mb-8 md:mr-8">
                 <div class="relative">
                   <a role="button"
+                     v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'outpost')"
                      title="Outpost"
                      class="button-image button-video shadow"
                      @click.prevent="openModal('outpost')">
@@ -133,7 +111,10 @@
       </template>
       <template v-slot:content>
         <div class="w-full flex align-center justify-center">
-          <div class="bg-black">
+          <div
+            v-if="modalList['trieste'].visible"
+            class="bg-graphite shadow-md"
+          >
             <iframe src="https://player.vimeo.com/video/392813558"
                     width="640"
                     height="360"
@@ -172,7 +153,10 @@
       </template>
       <template v-slot:content>
         <div class="w-full flex align-center justify-center">
-          <div class="bg-black shadow-md">
+          <div
+            v-if="modalList['radiant'].visible"
+            class="bg-graphite shadow-md"
+          >
             <iframe src="https://player.vimeo.com/video/202598664"
                     width="640"
                     height="360"
@@ -204,7 +188,10 @@
       </template>
       <template v-slot:content>
         <div class="w-full flex align-center justify-center">
-          <div class="bg-black">
+          <div
+            v-if="modalList['outpost'].visible"
+            class="bg-black shadow-md"
+          >
             <iframe src="https://player.vimeo.com/video/202594123"
                     width="640"
                     height="360"

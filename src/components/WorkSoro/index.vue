@@ -12,7 +12,7 @@
                background-color="transparent"
                class="soro-logo mb-4"
       />
-      <span class="text-xl md:text-3xl font-heading">SORO SOFTWARE</span> <span class="text-xl ml-4 md:text-3xl font-heading text-peach">2016 - PRESENT</span>
+      <span class="text-3xl md:text-3xl font-heading">SORO SOFTWARE</span> <span class="text-3xl ml-4 md:text-3xl font-heading text-peach">2016 - PRESENT</span>
       <br>
       <span class="font-extraLight">
         Senior Software Engineer, Co-Founder
@@ -20,7 +20,12 @@
     </header>
     <div class="">
       <p class="py-2">
-        Responsible for all aspects of the front-end technology decisions for an industry-specific SaaS platform. Duties included research, planning, component design and coding, library versioning, testing, and all other front-end paradigms & tasks necessary to deliver the platform to our customers. Also assisted heavily with UI/UX and design decisions.
+        Responsible for all aspects of the Front-End technology decisions for an industry-specific SaaS platform – a B2B
+        CRM & Sales Analytics SaaS offering for cannabis growers in the legal Washington cannabis industry.
+      </p>
+      <p>
+        Soro facilitates 20% of all sales between Growers to Dispensaries in WA State. We regularly delivered 15%
+        improvement in sales for our customers within 90 days of onboarding.
       </p>
 
       <div class="ss-box flex flex-wrap pt-8">
@@ -107,14 +112,35 @@
           <figcaption>Total Sales by Product report</figcaption>
         </figure>
       </div>
-      <p class="py-2">
-        Soro is CRM and analytics software tailored for the cannabis industry. It provides all of a organization's customer data in one place &mdash; per customer sales tasks/contacts/metrics/info and granular reporting on sales accounts, product sales (category and individual), account health, salesperson activity, and more.
-        <br>
-        Soro imports data from the user organization's state traceability system and builds its sales history, customer list, and analytics from start of the organization's first sale.
+      <p>
+        Duties included research, planning, component design and coding, library versioning, testing, and all other Front-
+        End tasks necessary to deliver the platform to our customers.
       </p>
-      <p class="py-2">
-        Soro runs on a <a href="https://vuejs.org/" target="_blank" class="anchor" rel="noopener">Vue JS</a> front-end connected via a <a href="https://www.graphile.org/postgraphile/" target="_blank" rel="noopener">PostGraphile</a> GraphQL API server pointed at a PostgreSQL database.
-      </p>
+      <ul class="duty-list">
+        <li>
+          Primary decision-maker and engineer for Soro’s customer-facing CRM application.
+        </li>
+        <li>
+          Implemented a mobile-first, responsive design, with a meticulous approach to providing user interfaces that are understandable at a glance and tailored to the cannabis industry’s unique workflows and requirements.
+        </li>
+        <li>
+          Created an organized, modular codebase to avoid technical debt and be flexible for future needs.
+        </li>
+        <li>
+          Crafted and executed a decision-making process to evaluate 3rd party services and libraries for
+          features/benefits/cost and technical savings.
+        </li>
+        <li>
+          Integrated multiple 3rd party services such as Google Maps, HighCharts, Filestack, and Auth0 into a seamless
+          customer experience.
+        </li>
+        <li>
+          Key resource for UI/UX and design decisions.
+        </li>
+        <li>
+          Collaborated and strategized with Product Manager on new features, user workflows, and product roadmap.
+        </li>
+      </ul>
     </div>
     <portal-modal
       :show="showUserModal"
@@ -286,5 +312,14 @@
   }
   figure {
     /*background: red;*/
+  }
+  .duty-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+  .duty-list li {
+    margin-top: 0.5rem;
   }
 </style>

@@ -2,12 +2,8 @@
   import TheHeader from '@/components/TheHeader'
   import MonsterScape from '@/components/MonsterScape'
   import AboutSection from '@/components/AboutSection/AboutSection'
-  // import LabLottie from '@/components/LabLottie'
-  // import WorkSection from '@/components/WorkSection/WorkSection'
-  // import ContactSection from '@/components/ContactSection/ContactSection'
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-  import EyeCave from '@/components/EyeCaveContact'
   gsap.registerPlugin(ScrollToPlugin)
   const labLottie = () => import(
     /* webpackchunkname: "lab-lottie" */ '@/components/LabLottie.vue'
@@ -18,6 +14,9 @@
   const contactSection = () => import(
     /* webpackchunkname: "contact-section" */ '@/components/ContactSection/ContactSection.vue'
     )
+  const eyeCave = () => import(
+    /* webpackchunkname: "eye-cave" */ '@/components/EyeCaveContact'
+    )
   const htmlEl = document.documentElement
   export default {
     components: {
@@ -25,9 +24,8 @@
       MonsterScape,
       AboutSection,
       labLottie,
-      EyeCave,
+      eyeCave,
       workSection,
-      // WorkSection,
       contactSection
     },
     data () {

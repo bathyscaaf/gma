@@ -4,12 +4,14 @@
 </script>
 
 <template>
-  <article class="container mx-auto text-white overflow-hidden px-8">
+  <article
+    class="container mx-auto text-white overflow-hidden px-8"
+  >
     <header class="mb-4 leading-tight">
-      <h2 class="text-2xl md:text-3xl font-heading text-outline-dark">STARBUCKS<span class="text-2xl ml-4 md:text-3xl font-heading text-peach">2008 - 2015</span></h2>
+      <h2 class="text-3xl md:text-3xl font-heading text-outline-dark">STARBUCKS<span class="text-3xl ml-4 md:text-3xl font-heading text-peach">2008 - 2015</span></h2>
     </header>
     <div class="md:mr-8 mt-12 overflow-hidden">
-      <section class="flex flex-wrap md:flex-no-wrap md:mr-8" v-observe-visibility="visibilityChanged">
+      <section class="flex flex-wrap md:flex-no-wrap md:mr-8">
         <div class="md:w-1/2 mb-8">
           <header>
             <h3 class="text-2xl font-semi-bold text-outline-dark">STARBUCKS.COM<span class="ml-2 text-peach">&amp; RELATED MICROSITES</span></h3>
@@ -70,7 +72,6 @@
               </a>
             </div>
           </div>
-
         </aside>
       </section>
       <section>
@@ -81,7 +82,9 @@
             <br>Some of these projects, such as those below, made it into retail stores, while others remained conceptual prototypes
           </span>
         </header>
-        <div class="flex flex-wrap md:flex-no-wrap">
+        <div
+          class="flex flex-wrap md:flex-no-wrap"
+        >
           <div class="md:w-1/2">
             <h4 class="text-xl font-semi-bold text-outline-dark">Magic Chalkboard<span class="ml-4 text-peach">RETI</span></h4>
             <p class="mt-2">
@@ -103,10 +106,13 @@
               to Bloomberg.com
             </p>
           </div>
-          <aside class="md:ml-8 flex flex-wrap">
+          <aside
+            class="md:ml-8 flex flex-wrap"
+          >
             <div class="relative">
               <div class="inline-block relative">
                 <a role="button"
+                   v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'sbux-chalkboard-video')"
                    class="button-image button-video shadow mb-8"
                    title="Magic Chalkboard Disneyland Video modal button"
                    @click.prevent="openModal('sbux-chalkboard-video')"
@@ -134,7 +140,6 @@
             </div>
           </aside>
         </div>
-
         <div class="flex flex-wrap md:flex-no-wrap mt-12 mb-2">
           <div class="md:w-1/3">
             <h4 class="text-xl font-semi-bold text-outline-dark">Coffee Passion Wall<span class="ml-4 text-peach">RETI</span></h4>
@@ -158,6 +163,7 @@
               <div>
                 <div class="relative">
                   <a role="button"
+                     v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'sbux-passion-video')"
                      class="button-image button-video shadow mb-8 md:mb-0 landscape-sm:mr-8 portrait-sm:mr-8"
                      title="Coffee Passion Wall (video) modal button"
                      @click.prevent="openModal('sbux-passion-video')"
@@ -247,6 +253,7 @@
               <div>
                 <figure class="relative md:ml-8 md:mb-0 portrait-sm:mb-8">
                   <a role="button"
+                     v-observe-visibility="(isVisible, entry) => visibilityChanged(isVisible, entry, 'sbux-midas-video')"
                      class="button-image button-video shadow"
                      title="Magic Chalkboard Disneyland modal button"
                      @click.prevent="openModal('sbux-midas-video')">
@@ -365,13 +372,18 @@
       </template>
       <template v-slot:content>
         <div class="w-full flex align-center justify-center">
-          <video
-            src="/video/magic_chalkboard_baseline.mp4"
-            :key="'sbux-chalkboard-video' + modalList['sbux-chalkboard-video'].key"
-            controls
-            mute
-            autoplay
-          />
+          <div
+            class="bg-graphite"
+            v-if="modalList['sbux-chalkboard-video'].visible"
+          >
+            <video
+              src="/video/magic_chalkboard_baseline.mp4"
+              :key="'sbux-chalkboard-video' + modalList['sbux-chalkboard-video'].key"
+              controls
+              mute
+              autoplay
+            />
+          </div>
         </div>
       </template>
       <template v-slot:footer>
@@ -427,7 +439,10 @@
       </template>
       <template v-slot:content>
         <div class="w-full flex align-center justify-center">
-          <div class="bg-black">
+          <div
+            class="bg-black"
+            v-if="modalList['sbux-passion-video'].visible"
+          >
             <video
               class="shadow-md"
               :key="'sbux-passion-video' + modalList['sbux-passion-video'].key"
@@ -605,9 +620,11 @@
       <template v-slot:content>
         <div class="bg-darker inline-flex justify-center">
           <video
+            v-if="modalList['sbux-midas-video'].visible"
             :key="'sbux-midas-video' + modalList['sbux-midas-video'].key"
             src="/video/midas.mp4"
             controls
+            autoplay
             mute
             poster="/img/sbux/midas_selected.jpg"
             class="outline-none bg-black"

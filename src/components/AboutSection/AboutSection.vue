@@ -16,7 +16,7 @@
         <div class="md:w-1/3">
           <span class="text-3xl font-semi-bold">Hi. I'm Glenn Berry, a front-end web developer and multimedia swiss army knife based in Seattle, WA.</span>
           <div>
-            <a href="/bin/glenn_berry_resume.pdf" target="_blank" rel="noopener" class="button bg-khaki text-graphite mt-8 inline-flex no-underline">
+            <a href="/bin/glenn_berry_resume_2021.pdf" target="_blank" rel="noopener" class="button bg-khaki text-graphite mt-8 inline-flex no-underline">
               <img src="/img/download-01.svg" alt="download icon" aria-hidden="true" class="svg-download">
               <div class="ml-4">RESUME</div>
               <div class="ml-4 bg-graphite text-white text-sm font-heading rounded p-2 opacity-25">

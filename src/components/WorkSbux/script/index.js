@@ -8,7 +8,6 @@ export default {
   },
   data () {
     return {
-      preloadImages: false,
       modalList: {
         'sbux-home': {
           active: false,
@@ -24,7 +23,8 @@ export default {
         },
         'sbux-chalkboard-video': {
           active: false,
-          key: 0
+          key: 0,
+          visible: false
         },
         'sbux-chalkboard-image': {
           active: false,
@@ -32,7 +32,8 @@ export default {
         },
         'sbux-passion-video': {
           active: false,
-          key: 0
+          key: 0,
+          visible: false
         },
         'sbux-passion-image-one': {
           active: false,
@@ -48,7 +49,8 @@ export default {
         },
         'sbux-midas-video': {
           active: false,
-          key: 0
+          key: 0,
+          visible: false
         },
         'sbux-midas-image': {
           active: false,
@@ -59,16 +61,16 @@ export default {
   },
   methods: {
     openModal (e) {
-      console.log('openModal: ', e)
       this.modalList[e].active = true
     },
     closeModal (e) {
-      console.log('closeModal', e)
       this.modalList[e].active = false
       this.modalList[e].key++
     },
-    visibilityChanged (e) {
-      this.preloadImages = e
+    visibilityChanged (isVisible, entry, location) {
+      // use visibility to prevent instantiation of Vimeo players unless button is visible
+      this.isVisible = isVisible
+      this.modalList[location].visible = isVisible
     }
   }
 }

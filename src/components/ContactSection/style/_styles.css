@@ -1,0 +1,21 @@
+.anti-robot {
+    display: flex;
+    align-items: center;
+}
+
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+}
+
+.toggle-message-box {
+    @apply my-4 inline-flex;
+}
+
+.toggle-message {
+    @apply  inline-flex items-center;
+}
+
+.robot-message-box {
+    @apply inline-flex flex-col bg-city p-8 mt-4 mb-72 text-white rounded-md text-center;
+}

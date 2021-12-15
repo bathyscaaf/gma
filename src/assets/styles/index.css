@@ -1,5 +1,6 @@
 @import './_base.css';
 .header-shadow {
+    @apply bg-peach-65;
     box-shadow: 0 -1px 3px 1px rgba(0,0,0,0.4);
 }
 /*@font-face {*/
